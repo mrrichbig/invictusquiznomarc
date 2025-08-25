@@ -100,7 +100,7 @@ export default function LandingPage() {
           ))}
         </div>
 
-        {/* Splash Logo - Sem indicador de loading */}
+        {/* Splash Logo - Sem loading indicator */}
         <div className="relative z-10">
           <div className="relative inline-block">
             <img
