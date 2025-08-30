@@ -61,7 +61,7 @@ export default function Aprovado() {
 
   return (
     <div
-      className={`min-h-screen ${isMobile ? "bg-gradient-to-br from-gray-900 via-gray-800 to-black" : "bg-gradient-to-br from-gray-900 via-black to-gray-900"} ${isMobile ? "flex flex-col justify-start items-center py-4" : "flex items-center justify-center"} p-4 relative overflow-hidden ${isMobile ? "pt-4" : "pt-8"}`}
+      className={`min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 ${isMobile ? "flex flex-col justify-start items-center py-4" : "flex items-center justify-center"} p-4 relative overflow-hidden ${isMobile ? "pt-4" : "pt-8"}`}
     >
       {/* Clean Cyber Background Effects */}
       <div className="absolute inset-0">
@@ -107,7 +107,7 @@ export default function Aprovado() {
       </div>
 
       <Card
-        className={`${isMobile ? "max-w-md w-full mt-4" : "max-w-2xl"} w-full border border-gray-700/50 shadow-2xl ${isMobile ? "mobile-card-enhanced" : "bg-gray-900/80"} backdrop-blur-xl transition-all duration-1500 relative overflow-hidden ${
+        className={`${isMobile ? "max-w-md w-full mt-4" : "max-w-2xl"} w-full border border-gray-700/50 shadow-2xl bg-gray-900/80 backdrop-blur-xl transition-all duration-1500 relative overflow-hidden ${
           isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-10"
         }`}
       >
@@ -125,7 +125,7 @@ export default function Aprovado() {
 
           {/* Clean Title */}
           <h1
-            className={`${isMobile ? "text-2xl mobile-text-high-contrast" : "text-3xl"} font-modern font-bold text-white mb-8 transition-all duration-1000 delay-300 ${
+            className={`${isMobile ? "text-2xl" : "text-3xl"} font-modern font-bold text-white mb-8 transition-all duration-1000 delay-300 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
@@ -167,16 +167,12 @@ export default function Aprovado() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
-            <p
-              className={`${isMobile ? "text-base mobile-text-medium-contrast" : "text-lg"} font-modern text-gray-300 leading-relaxed`}
-            >
+            <p className={`${isMobile ? "text-base" : "text-lg"} font-modern text-gray-300 leading-relaxed`}>
               Suas respostas foram registradas e serão analisadas pela{" "}
               <span className="text-red-400 font-semibold">Equipe Invictus</span>.
             </p>
 
-            <p
-              className={`${isMobile ? "text-sm mobile-text-subtle" : "text-base"} font-modern text-gray-400 leading-relaxed`}
-            >
+            <p className={`${isMobile ? "text-sm" : "text-base"} font-modern text-gray-400 leading-relaxed`}>
               Em breve entraremos em contato através do seu <span className="text-white font-semibold">email</span>{" "}
               informando se você foi aprovado ou não.
             </p>
@@ -225,7 +221,7 @@ export default function Aprovado() {
             <Button
               asChild
               variant="outline"
-              className={`${isMobile ? "h-14 px-6 mobile-button-enhanced" : "h-14 px-8"} bg-gray-800/60 border-gray-600/50 text-gray-300 hover:bg-gray-700/60 hover:border-gray-500/70 hover:text-white transition-all duration-300 font-modern rounded-lg backdrop-blur-sm`}
+              className={`${isMobile ? "h-12 px-6" : "h-14 px-8"} bg-gray-800/60 border-gray-600/50 text-gray-300 hover:bg-gray-700/60 hover:border-gray-500/70 hover:text-white transition-all duration-300 font-modern rounded-lg backdrop-blur-sm`}
             >
               <a
                 href="https://www.instagram.com/aordeminvictus/"
