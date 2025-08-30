@@ -10,7 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import { useRouter } from "next/navigation"
-import { Crown, Zap } from "lucide-react"
+import { Crown, User, MessageSquare } from "lucide-react"
 
 export default function InvictusQuiz() {
   const router = useRouter()
@@ -99,15 +99,16 @@ export default function InvictusQuiz() {
   }
 
   return (
-    <div
-      className={`min-h-screen ${isMobile ? "mobile-bg-simple" : "bg-gradient-to-br from-black via-gray-900 to-red-950"} relative overflow-hidden pt-8`}
-    >
-      {/* Optimized Background Effects */}
+    <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden pt-8`}>
+      {/* Clean Cyber Background Effects */}
       <div className="absolute inset-0">
+        {/* Minimal floating particles */}
         {[...Array(isMobile ? 5 : 15)].map((_, i) => (
           <div
             key={i}
-            className={`absolute w-1 h-1 bg-red-500/60 rounded-full animate-float-mobile ${isMobile && i > 3 ? "mobile-particles" : ""}`}
+            className={`absolute rounded-full ${
+              i % 2 === 0 ? "w-1 h-1 bg-red-500/40" : "w-0.5 h-0.5 bg-red-400/30"
+            } animate-float-mobile`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -117,63 +118,48 @@ export default function InvictusQuiz() {
           />
         ))}
 
-        {/* Subtle Hacker Effects */}
+        {/* Clean geometric grid */}
         {!isMobile && (
-          <>
-            {/* Code Lines */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden">
-              {[...Array(4)].map((_, i) => (
-                <div
-                  key={`code-${i}`}
-                  className="absolute text-red-500/15 text-xs font-mono animate-code-scroll"
-                  style={{
-                    left: `${5 + i * 25}%`,
-                    animationDelay: `${i * 2}s`,
-                  }}
-                >
-                  <div>function validateInvictus() {"{"}</div>
-                  <div>&nbsp;&nbsp;return elite.access;</div>
-                  <div>{"}"}</div>
-                </div>
-              ))}
-            </div>
+          <div className="absolute inset-0 pointer-events-none opacity-10">
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `
+                linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)
+              `,
+                backgroundSize: "50px 50px",
+              }}
+            ></div>
+          </div>
+        )}
 
-            {/* Network Nodes */}
-            <div className="absolute inset-0 pointer-events-none">
-              {[...Array(6)].map((_, i) => (
-                <div
-                  key={`node-${i}`}
-                  className="absolute w-2 h-2 bg-red-500/30 rounded-full animate-network-pulse"
-                  style={{
-                    left: `${10 + i * 15}%`,
-                    top: `${20 + (i % 3) * 25}%`,
-                    animationDelay: `${i * 0.7}s`,
-                  }}
-                />
-              ))}
-            </div>
-          </>
+        {/* Subtle cyber elements */}
+        {!isMobile && (
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 text-red-500/20 text-xs font-mono">[QUIZ_ACTIVE]</div>
+            <div className="absolute bottom-1/3 right-1/4 text-red-400/20 text-xs font-mono">[SCANNING]</div>
+          </div>
         )}
       </div>
 
-      {/* Elegant Main Content */}
-      <div className={`container mx-auto px-4 ${isMobile ? "py-4" : "py-8"} ${isMobile ? "max-w-full" : "max-w-5xl"}`}>
+      {/* Main Content */}
+      <div className={`container mx-auto px-4 ${isMobile ? "py-4" : "py-8"} ${isMobile ? "max-w-full" : "max-w-4xl"}`}>
         <Card
-          className={`border-2 border-red-500/40 shadow-2xl bg-black/60 backdrop-blur-md transition-all duration-1000 overflow-hidden relative ${
+          className={`border border-gray-700/50 shadow-2xl bg-gray-900/80 backdrop-blur-xl transition-all duration-1000 overflow-hidden relative ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent opacity-50"></div>
-          <div className="absolute -inset-1 bg-gradient-to-r from-red-500/30 to-red-600/30 rounded-lg blur-sm animate-pulse-mobile"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent"></div>
 
           <CardContent className={`${isMobile ? "p-6" : "p-12 md:p-16"} relative z-10`}>
             <form onSubmit={handleSubmit} className={`space-y-${isMobile ? "8" : "12"}`}>
-              {/* Elegant Personal Data Section */}
+              {/* Personal Data Section */}
               <div className={`space-y-${isMobile ? "6" : "8"}`}>
                 <h2
-                  className={`${isMobile ? "text-xl" : "text-3xl"} font-modern font-bold text-white border-b-2 border-red-500 pb-4 flex items-center gap-3 animate-slide-up-mobile`}
+                  className={`${isMobile ? "text-xl" : "text-2xl"} font-modern font-bold text-white border-b border-gray-600/50 pb-4 flex items-center gap-3 animate-slide-up-mobile`}
                 >
-                  <Zap className={`${isMobile ? "h-5 w-5" : "h-8 w-8"} text-red-500 animate-pulse-mobile`} />
+                  <User className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500`} />
                   Seus Dados Pessoais
                 </h2>
 
@@ -181,7 +167,7 @@ export default function InvictusQuiz() {
                   <div className="space-y-3 animate-fade-in-mobile delay-mobile-100">
                     <Label
                       htmlFor="nome"
-                      className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-gray-200`}
+                      className={`${isMobile ? "text-sm" : "text-base"} font-modern font-semibold text-gray-300`}
                     >
                       Nome Completo *
                     </Label>
@@ -191,7 +177,7 @@ export default function InvictusQuiz() {
                       required
                       value={formData.nome}
                       onChange={(e) => setFormData((prev) => ({ ...prev, nome: e.target.value }))}
-                      className={`${isMobile ? "h-14 text-base" : "h-16 text-lg"} border-2 border-red-500/40 focus:border-red-500 bg-black/60 text-white placeholder:text-gray-400 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg`}
+                      className={`${isMobile ? "h-12 text-base" : "h-14 text-lg"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg backdrop-blur-sm`}
                       placeholder="Digite seu nome completo"
                     />
                   </div>
@@ -199,18 +185,17 @@ export default function InvictusQuiz() {
                   <div className="space-y-3 animate-fade-in-mobile delay-mobile-200">
                     <Label
                       htmlFor="email"
-                      className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-gray-200`}
+                      className={`${isMobile ? "text-sm" : "text-base"} font-modern font-semibold text-gray-300`}
                     >
                       E-mail *
                     </Label>
                     <Input
                       id="email"
-                      id="input-email"
                       type="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                      className={`${isMobile ? "h-14 text-base" : "h-16 text-lg"} border-2 border-red-500/40 focus:border-red-500 bg-black/60 text-white placeholder:text-gray-400 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg`}
+                      className={`${isMobile ? "h-12 text-base" : "h-14 text-lg"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg backdrop-blur-sm`}
                       placeholder="seu@email.com"
                     />
                   </div>
@@ -219,35 +204,34 @@ export default function InvictusQuiz() {
                 <div className="space-y-3 animate-fade-in-mobile delay-mobile-300">
                   <Label
                     htmlFor="whatsapp"
-                    className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-gray-200`}
+                    className={`${isMobile ? "text-sm" : "text-base"} font-modern font-semibold text-gray-300`}
                   >
                     WhatsApp com DDD *
                   </Label>
                   <Input
                     id="whatsapp"
-                    id="input-whatsapp"
                     type="tel"
                     required
                     value={formData.whatsapp}
                     onChange={(e) => setFormData((prev) => ({ ...prev, whatsapp: e.target.value }))}
-                    className={`${isMobile ? "h-14 text-base w-full" : "h-16 text-lg max-w-md"} border-2 border-red-500/40 focus:border-red-500 bg-black/60 text-white placeholder:text-gray-400 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg`}
+                    className={`${isMobile ? "h-12 text-base w-full" : "h-14 text-lg max-w-md"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg backdrop-blur-sm`}
                     placeholder="(11) 99999-9999"
                   />
                 </div>
               </div>
 
-              {/* Elegant Questions Section */}
+              {/* Questions Section */}
               <div className={`space-y-${isMobile ? "8" : "10"}`}>
                 <h2
-                  className={`${isMobile ? "text-xl" : "text-3xl"} font-modern font-bold text-white border-b-2 border-red-500 pb-4 flex items-center gap-3 animate-slide-up-mobile delay-mobile-400`}
+                  className={`${isMobile ? "text-xl" : "text-2xl"} font-modern font-bold text-white border-b border-gray-600/50 pb-4 flex items-center gap-3 animate-slide-up-mobile delay-mobile-400`}
                 >
-                  <Crown className={`${isMobile ? "h-5 w-5" : "h-8 w-8"} text-red-500 animate-pulse-mobile`} />
+                  <MessageSquare className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500`} />
                   Avaliação Exclusiva
                 </h2>
 
-                {/* Elegant Question 1 */}
+                {/* Question 1 */}
                 <div className="space-y-5 animate-fade-in-mobile delay-mobile-500">
-                  <Label className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-semibold text-white`}>
+                  <Label className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-white`}>
                     1. Qual sua experiência com Marketing Digital?
                   </Label>
                   <RadioGroup
@@ -263,12 +247,16 @@ export default function InvictusQuiz() {
                     ].map((option, index) => (
                       <div
                         key={option}
-                        className={`flex items-center space-x-4 ${isMobile ? "p-4" : "p-5"} rounded-xl border border-red-500/30 hover:border-red-500/60 bg-black/40 hover:bg-black/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
+                        className={`flex items-center space-x-4 ${isMobile ? "p-4" : "p-5"} rounded-lg border border-gray-600/50 hover:border-gray-500/70 bg-gray-800/40 hover:bg-gray-700/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
                       >
-                        <RadioGroupItem value={option} id={option} className="border-red-500/60 text-red-500 w-5 h-5" />
+                        <RadioGroupItem
+                          value={option}
+                          id={option}
+                          className="border-gray-500/60 text-red-500 w-5 h-5"
+                        />
                         <Label
                           htmlFor={option}
-                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-gray-200 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
+                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-gray-300 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
                         >
                           {option}
                         </Label>
@@ -277,9 +265,9 @@ export default function InvictusQuiz() {
                   </RadioGroup>
                 </div>
 
-                {/* Elegant Question 2 */}
+                {/* Question 2 */}
                 <div className="space-y-5 animate-fade-in-mobile delay-mobile-500">
-                  <Label className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-semibold text-white`}>
+                  <Label className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-white`}>
                     2. Você já tentou vender algum produto online?
                   </Label>
                   <RadioGroup
@@ -294,12 +282,16 @@ export default function InvictusQuiz() {
                     ].map((option, index) => (
                       <div
                         key={option}
-                        className={`flex items-center space-x-4 ${isMobile ? "p-4" : "p-5"} rounded-xl border border-red-500/30 hover:border-red-500/60 bg-black/40 hover:bg-black/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
+                        className={`flex items-center space-x-4 ${isMobile ? "p-4" : "p-5"} rounded-lg border border-gray-600/50 hover:border-gray-500/70 bg-gray-800/40 hover:bg-gray-700/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
                       >
-                        <RadioGroupItem value={option} id={option} className="border-red-500/60 text-red-500 w-5 h-5" />
+                        <RadioGroupItem
+                          value={option}
+                          id={option}
+                          className="border-gray-500/60 text-red-500 w-5 h-5"
+                        />
                         <Label
                           htmlFor={option}
-                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-gray-200 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
+                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-gray-300 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
                         >
                           {option}
                         </Label>
@@ -308,9 +300,9 @@ export default function InvictusQuiz() {
                   </RadioGroup>
                 </div>
 
-                {/* Elegant Question 3 */}
+                {/* Question 3 */}
                 <div className="space-y-5 animate-fade-in-mobile delay-mobile-500">
-                  <Label className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-semibold text-white`}>
+                  <Label className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-white`}>
                     3. Com quais áreas do digital você já teve contato? (Múltipla escolha)
                   </Label>
                   <div className="space-y-4">
@@ -324,17 +316,17 @@ export default function InvictusQuiz() {
                     ].map((area, index) => (
                       <div
                         key={area}
-                        className={`flex items-center space-x-4 ${isMobile ? "p-4" : "p-5"} rounded-xl border border-red-500/30 hover:border-red-500/60 bg-black/40 hover:bg-black/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
+                        className={`flex items-center space-x-4 ${isMobile ? "p-4" : "p-5"} rounded-lg border border-gray-600/50 hover:border-gray-500/70 bg-gray-800/40 hover:bg-gray-700/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
                       >
                         <Checkbox
                           id={area}
                           checked={formData.areasContato.includes(area)}
                           onCheckedChange={(checked) => handleAreasChange(area, checked as boolean)}
-                          className="border-red-500/60 data-[state=checked]:bg-red-500 data-[state=checked]:border-red-500 transition-all duration-300 w-5 h-5"
+                          className="border-gray-500/60 data-[state=checked]:bg-red-500 data-[state=checked]:border-red-500 transition-all duration-300 w-5 h-5"
                         />
                         <Label
                           htmlFor={area}
-                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-gray-200 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
+                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-gray-300 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
                         >
                           {area}
                         </Label>
@@ -343,11 +335,11 @@ export default function InvictusQuiz() {
                   </div>
                 </div>
 
-                {/* Elegant Question 4 */}
+                {/* Question 4 */}
                 <div className="space-y-5 animate-fade-in-mobile delay-mobile-500">
                   <Label
                     htmlFor="impedimento"
-                    className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-semibold text-white`}
+                    className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-white`}
                   >
                     4. O que está te impedindo de vencer hoje?
                   </Label>
@@ -355,17 +347,17 @@ export default function InvictusQuiz() {
                     id="impedimento"
                     value={formData.impedimento}
                     onChange={(e) => setFormData((prev) => ({ ...prev, impedimento: e.target.value }))}
-                    className={`${isMobile ? "min-h-[120px] text-base" : "min-h-[140px] text-lg"} border-2 border-red-500/40 focus:border-red-500 bg-black/60 text-white placeholder:text-gray-400 transition-all duration-300 focus-mobile touch-action-manipulation font-modern rounded-lg leading-relaxed`}
+                    className={`${isMobile ? "min-h-[120px] text-base" : "min-h-[140px] text-lg"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile touch-action-manipulation font-modern rounded-lg leading-relaxed backdrop-blur-sm`}
                     placeholder="Descreva os principais obstáculos que você enfrenta..."
                   />
                 </div>
               </div>
 
-              {/* Submit Button - Fixed for Mobile */}
+              {/* Submit Button */}
               <div className={`pt-${isMobile ? "8" : "10"} animate-fade-in-mobile delay-mobile-500`}>
                 <Button
                   type="submit"
-                  className={`w-full ${isMobile ? "h-16 px-4" : "h-20 px-8"} font-modern font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-2xl transform transition-all duration-500 border-2 border-red-500 hover:border-red-400 group relative overflow-hidden mobile-button touch-action-manipulation tap-highlight-none active:animate-button-press rounded-xl ${!isMobile ? "hover:scale-105" : ""}`}
+                  className={`w-full ${isMobile ? "h-16 px-4" : "h-20 px-8"} font-modern font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-2xl transform transition-all duration-500 border border-gray-600/50 hover:border-red-400 group relative overflow-hidden mobile-button touch-action-manipulation tap-highlight-none active:animate-button-press rounded-xl ${!isMobile ? "hover:scale-105" : ""}`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-red-500/40 to-red-600/40 rounded-xl blur-xl transition-all duration-500 animate-pulse-mobile"></div>
                   <div className="flex items-center justify-center w-full">
@@ -388,11 +380,10 @@ export default function InvictusQuiz() {
         </Card>
       </div>
 
-      {/* Elegant Footer */}
-      <div className="bg-black/80 py-8 border-t border-red-500/30 relative backdrop-blur-sm">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/10 to-transparent"></div>
+      {/* Clean Footer */}
+      <div className="bg-gray-900/60 py-6 border-t border-gray-700/30 relative backdrop-blur-sm">
         <div className="container mx-auto px-4 text-center relative">
-          <p className={`text-gray-400 ${isMobile ? "text-xs" : "text-sm"} font-modern animate-fade-in-mobile`}>
+          <p className={`text-gray-500 ${isMobile ? "text-xs" : "text-sm"} font-modern`}>
             © 2024 Invictus Quiz. Todos os direitos reservados.
           </p>
         </div>
