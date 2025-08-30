@@ -301,6 +301,112 @@
   .mobile-title-responsive {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
+
+  /* Cyber Micro-Interactions */
+  .animate-cyber-hover {
+    animation: cyberHover 0.3s ease-out;
+  }
+
+  .animate-cyber-click {
+    animation: cyberClick 0.2s ease-out;
+  }
+
+  .animate-cyber-focus {
+    animation: cyberFocus 0.4s ease-out;
+  }
+
+  .animate-cyber-entrance {
+    animation: cyberEntrance 1.2s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-cyber-slide-in {
+    animation: cyberSlideIn 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  .animate-cyber-fade-up {
+    animation: cyberFadeUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animate-cyber-scale-in {
+    animation: cyberScaleIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  .animate-cyber-glow-pulse {
+    animation: cyberGlowPulse 3s ease-in-out infinite;
+  }
+
+  .animate-cyber-data-flow {
+    animation: cyberDataFlow 8s linear infinite;
+  }
+
+  .animate-cyber-typing {
+    animation: cyberTyping 0.1s ease-in-out;
+  }
+
+  .animate-cyber-success {
+    animation: cyberSuccess 1.5s ease-out forwards;
+  }
+
+  .animate-cyber-button-ready {
+    animation: cyberButtonReady 2s ease-in-out infinite;
+  }
+
+  /* Hover Effects */
+  .hover-cyber-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-cyber-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 51, 102, 0.2);
+  }
+
+  .hover-cyber-glow:hover {
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.4), inset 0 0 20px rgba(255, 51, 102, 0.1);
+  }
+
+  .hover-cyber-border:hover {
+    border-color: rgba(255, 51, 102, 0.6);
+    box-shadow: inset 0 0 10px rgba(255, 51, 102, 0.1);
+  }
+
+  /* Focus States */
+  .focus-cyber {
+    @apply focus:outline-none focus:ring-2 focus:ring-cyber-red/50 focus:border-cyber-red;
+  }
+
+  /* Staggered Delays */
+  .delay-cyber-100 {
+    animation-delay: 100ms;
+  }
+  .delay-cyber-200 {
+    animation-delay: 200ms;
+  }
+  .delay-cyber-300 {
+    animation-delay: 300ms;
+  }
+  .delay-cyber-400 {
+    animation-delay: 400ms;
+  }
+  .delay-cyber-500 {
+    animation-delay: 500ms;
+  }
+  .delay-cyber-600 {
+    animation-delay: 600ms;
+  }
+  .delay-cyber-700 {
+    animation-delay: 700ms;
+  }
+  .delay-cyber-800 {
+    animation-delay: 800ms;
+  }
 }
 
 /* Elegant text shimmer effect */
@@ -906,6 +1012,157 @@
   100% {
     transform: translateX(100%);
     opacity: 0;
+  }
+}
+
+@keyframes cyberHover {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 51, 102, 0);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 51, 102, 0.3);
+  }
+  100% {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px rgba(255, 51, 102, 0.2);
+  }
+}
+
+@keyframes cyberClick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes cyberFocus {
+  0% {
+    box-shadow: 0 0 0 rgba(255, 51, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgba(255, 51, 102, 0.3);
+  }
+}
+
+@keyframes cyberEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(2px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(10px) scale(0.98);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes cyberSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cyberFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cyberScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cyberGlowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(255, 51, 102, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.6), 0 0 30px rgba(255, 51, 102, 0.3);
+  }
+}
+
+@keyframes cyberDataFlow {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) skewX(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cyberTyping {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes cyberSuccess {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(-90deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes cyberButtonReady {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(255, 51, 102, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.5), 0 0 30px rgba(255, 51, 102, 0.2);
   }
 }
 
