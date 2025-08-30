@@ -99,7 +99,9 @@ export default function InvictusQuiz() {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden pt-8`}>
+    <div
+      className={`min-h-screen ${isMobile ? "bg-gradient-to-br from-gray-900 via-gray-800 to-black" : "bg-gradient-to-br from-gray-900 via-black to-gray-900"} relative overflow-hidden pt-8`}
+    >
       {/* Clean Cyber Background Effects */}
       <div className="absolute inset-0">
         {/* Minimal floating particles */}
@@ -146,7 +148,7 @@ export default function InvictusQuiz() {
       {/* Main Content */}
       <div className={`container mx-auto px-4 ${isMobile ? "py-4" : "py-8"} ${isMobile ? "max-w-full" : "max-w-4xl"}`}>
         <Card
-          className={`border border-gray-700/50 shadow-2xl bg-gray-900/80 backdrop-blur-xl transition-all duration-1000 overflow-hidden relative ${
+          className={`border border-gray-700/50 shadow-2xl ${isMobile ? "mobile-card-enhanced" : "bg-gray-900/80"} backdrop-blur-xl transition-all duration-1000 overflow-hidden relative ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -167,7 +169,7 @@ export default function InvictusQuiz() {
                   <div className="space-y-3 animate-fade-in-mobile delay-mobile-100">
                     <Label
                       htmlFor="nome"
-                      className={`${isMobile ? "text-sm" : "text-base"} font-modern font-semibold text-gray-300`}
+                      className={`${isMobile ? "text-sm mobile-text-high-contrast" : "text-base"} font-modern font-semibold text-gray-300`}
                     >
                       Nome Completo *
                     </Label>
@@ -177,7 +179,7 @@ export default function InvictusQuiz() {
                       required
                       value={formData.nome}
                       onChange={(e) => setFormData((prev) => ({ ...prev, nome: e.target.value }))}
-                      className={`${isMobile ? "h-12 text-base" : "h-14 text-lg"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg backdrop-blur-sm`}
+                      className={`${isMobile ? "h-14 text-base mobile-input-enhanced mobile-focus-enhanced" : "h-14 text-lg"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg backdrop-blur-sm`}
                       placeholder="Digite seu nome completo"
                     />
                   </div>
@@ -185,7 +187,7 @@ export default function InvictusQuiz() {
                   <div className="space-y-3 animate-fade-in-mobile delay-mobile-200">
                     <Label
                       htmlFor="email"
-                      className={`${isMobile ? "text-sm" : "text-base"} font-modern font-semibold text-gray-300`}
+                      className={`${isMobile ? "text-sm mobile-text-high-contrast" : "text-base"} font-modern font-semibold text-gray-300`}
                     >
                       E-mail *
                     </Label>
@@ -195,7 +197,7 @@ export default function InvictusQuiz() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                      className={`${isMobile ? "h-12 text-base" : "h-14 text-lg"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg backdrop-blur-sm`}
+                      className={`${isMobile ? "h-14 text-base mobile-input-enhanced mobile-focus-enhanced" : "h-14 text-lg"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg backdrop-blur-sm`}
                       placeholder="seu@email.com"
                     />
                   </div>
@@ -204,7 +206,7 @@ export default function InvictusQuiz() {
                 <div className="space-y-3 animate-fade-in-mobile delay-mobile-300">
                   <Label
                     htmlFor="whatsapp"
-                    className={`${isMobile ? "text-sm" : "text-base"} font-modern font-semibold text-gray-300`}
+                    className={`${isMobile ? "text-sm mobile-text-high-contrast" : "text-base"} font-modern font-semibold text-gray-300`}
                   >
                     WhatsApp com DDD *
                   </Label>
@@ -214,7 +216,7 @@ export default function InvictusQuiz() {
                     required
                     value={formData.whatsapp}
                     onChange={(e) => setFormData((prev) => ({ ...prev, whatsapp: e.target.value }))}
-                    className={`${isMobile ? "h-12 text-base w-full" : "h-14 text-lg max-w-md"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg backdrop-blur-sm`}
+                    className={`${isMobile ? "h-14 text-base mobile-input-enhanced mobile-focus-enhanced" : "h-14 text-lg max-w-md"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile mobile-button touch-action-manipulation font-modern rounded-lg backdrop-blur-sm`}
                     placeholder="(11) 99999-9999"
                   />
                 </div>
@@ -231,7 +233,9 @@ export default function InvictusQuiz() {
 
                 {/* Question 1 */}
                 <div className="space-y-5 animate-fade-in-mobile delay-mobile-500">
-                  <Label className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-white`}>
+                  <Label
+                    className={`${isMobile ? "text-base mobile-text-high-contrast" : "text-lg"} font-modern font-semibold text-white`}
+                  >
                     1. Qual sua experiência com Marketing Digital?
                   </Label>
                   <RadioGroup
@@ -247,7 +251,7 @@ export default function InvictusQuiz() {
                     ].map((option, index) => (
                       <div
                         key={option}
-                        className={`flex items-center space-x-4 ${isMobile ? "p-4" : "p-5"} rounded-lg border border-gray-600/50 hover:border-gray-500/70 bg-gray-800/40 hover:bg-gray-700/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
+                        className={`flex items-center space-x-4 ${isMobile ? "p-4 mobile-option-enhanced" : "p-5"} rounded-lg border border-gray-600/50 hover:border-gray-500/70 bg-gray-800/40 hover:bg-gray-700/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
                       >
                         <RadioGroupItem
                           value={option}
@@ -256,7 +260,7 @@ export default function InvictusQuiz() {
                         />
                         <Label
                           htmlFor={option}
-                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-gray-300 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
+                          className={`${isMobile ? "text-sm mobile-text-medium-contrast" : "text-base"} cursor-pointer flex-1 text-gray-300 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
                         >
                           {option}
                         </Label>
@@ -267,7 +271,9 @@ export default function InvictusQuiz() {
 
                 {/* Question 2 */}
                 <div className="space-y-5 animate-fade-in-mobile delay-mobile-500">
-                  <Label className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-white`}>
+                  <Label
+                    className={`${isMobile ? "text-base mobile-text-high-contrast" : "text-lg"} font-modern font-semibold text-white`}
+                  >
                     2. Você já tentou vender algum produto online?
                   </Label>
                   <RadioGroup
@@ -282,7 +288,7 @@ export default function InvictusQuiz() {
                     ].map((option, index) => (
                       <div
                         key={option}
-                        className={`flex items-center space-x-4 ${isMobile ? "p-4" : "p-5"} rounded-lg border border-gray-600/50 hover:border-gray-500/70 bg-gray-800/40 hover:bg-gray-700/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
+                        className={`flex items-center space-x-4 ${isMobile ? "p-4 mobile-option-enhanced" : "p-5"} rounded-lg border border-gray-600/50 hover:border-gray-500/70 bg-gray-800/40 hover:bg-gray-700/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
                       >
                         <RadioGroupItem
                           value={option}
@@ -291,7 +297,7 @@ export default function InvictusQuiz() {
                         />
                         <Label
                           htmlFor={option}
-                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-gray-300 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
+                          className={`${isMobile ? "text-sm mobile-text-medium-contrast" : "text-base"} cursor-pointer flex-1 text-gray-300 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
                         >
                           {option}
                         </Label>
@@ -302,7 +308,9 @@ export default function InvictusQuiz() {
 
                 {/* Question 3 */}
                 <div className="space-y-5 animate-fade-in-mobile delay-mobile-500">
-                  <Label className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-white`}>
+                  <Label
+                    className={`${isMobile ? "text-base mobile-text-high-contrast" : "text-lg"} font-modern font-semibold text-white`}
+                  >
                     3. Com quais áreas do digital você já teve contato? (Múltipla escolha)
                   </Label>
                   <div className="space-y-4">
@@ -316,7 +324,7 @@ export default function InvictusQuiz() {
                     ].map((area, index) => (
                       <div
                         key={area}
-                        className={`flex items-center space-x-4 ${isMobile ? "p-4" : "p-5"} rounded-lg border border-gray-600/50 hover:border-gray-500/70 bg-gray-800/40 hover:bg-gray-700/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
+                        className={`flex items-center space-x-4 ${isMobile ? "p-4 mobile-option-enhanced" : "p-5"} rounded-lg border border-gray-600/50 hover:border-gray-500/70 bg-gray-800/40 hover:bg-gray-700/60 transition-all duration-300 group touch-action-manipulation mobile-button backdrop-blur-sm`}
                       >
                         <Checkbox
                           id={area}
@@ -326,7 +334,7 @@ export default function InvictusQuiz() {
                         />
                         <Label
                           htmlFor={area}
-                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-gray-300 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
+                          className={`${isMobile ? "text-sm mobile-text-medium-contrast" : "text-base"} cursor-pointer flex-1 text-gray-300 group-hover:text-white transition-colors duration-300 font-modern leading-relaxed`}
                         >
                           {area}
                         </Label>
@@ -339,7 +347,7 @@ export default function InvictusQuiz() {
                 <div className="space-y-5 animate-fade-in-mobile delay-mobile-500">
                   <Label
                     htmlFor="impedimento"
-                    className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-white`}
+                    className={`${isMobile ? "text-base mobile-text-high-contrast" : "text-lg"} font-modern font-semibold text-white`}
                   >
                     4. O que está te impedindo de vencer hoje?
                   </Label>
@@ -347,7 +355,7 @@ export default function InvictusQuiz() {
                     id="impedimento"
                     value={formData.impedimento}
                     onChange={(e) => setFormData((prev) => ({ ...prev, impedimento: e.target.value }))}
-                    className={`${isMobile ? "min-h-[120px] text-base" : "min-h-[140px] text-lg"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile touch-action-manipulation font-modern rounded-lg leading-relaxed backdrop-blur-sm`}
+                    className={`${isMobile ? "min-h-[120px] text-base mobile-input-enhanced mobile-focus-enhanced" : "min-h-[140px] text-lg"} border border-gray-600/50 focus:border-red-500 bg-gray-800/60 text-white placeholder:text-gray-500 transition-all duration-300 focus-mobile touch-action-manipulation font-modern rounded-lg leading-relaxed backdrop-blur-sm`}
                     placeholder="Descreva os principais obstáculos que você enfrenta..."
                   />
                 </div>
@@ -357,7 +365,7 @@ export default function InvictusQuiz() {
               <div className={`pt-${isMobile ? "8" : "10"} animate-fade-in-mobile delay-mobile-500`}>
                 <Button
                   type="submit"
-                  className={`w-full ${isMobile ? "h-16 px-4" : "h-20 px-8"} font-modern font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-2xl transform transition-all duration-500 border border-gray-600/50 hover:border-red-400 group relative overflow-hidden mobile-button touch-action-manipulation tap-highlight-none active:animate-button-press rounded-xl ${!isMobile ? "hover:scale-105" : ""}`}
+                  className={`w-full ${isMobile ? "h-18 px-4 mobile-button-enhanced" : "h-20 px-8"} font-modern font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-2xl transform transition-all duration-500 border border-gray-600/50 hover:border-red-400 group relative overflow-hidden mobile-button touch-action-manipulation tap-highlight-none active:animate-button-press rounded-xl ${!isMobile ? "hover:scale-105" : ""}`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-red-500/40 to-red-600/40 rounded-xl blur-xl transition-all duration-500 animate-pulse-mobile"></div>
                   <div className="flex items-center justify-center w-full">

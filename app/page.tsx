@@ -117,7 +117,9 @@ export default function LandingPage() {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden relative`}>
+    <div
+      className={`min-h-screen ${isMobile ? "bg-gradient-to-br from-gray-900 via-gray-800 to-black" : "bg-gradient-to-br from-gray-900 via-black to-gray-900"} overflow-hidden relative`}
+    >
       {/* Clean Cyber Background Effects */}
       <div className="absolute inset-0">
         {/* Minimal particles */}
@@ -204,13 +206,13 @@ export default function LandingPage() {
             className={`${isMobile ? "mb-10" : "mb-16"} max-w-4xl mx-auto transition-all duration-2000 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <p
-              className={`${isMobile ? "text-base px-2" : "text-xl md:text-2xl"} font-modern text-gray-300 leading-relaxed mb-6`}
+              className={`${isMobile ? "text-base px-2 mobile-text-high-contrast" : "text-xl md:text-2xl"} font-modern text-gray-300 leading-relaxed mb-6`}
             >
               Entra quem está pronto. Conteúdo de <span className="text-red-400 font-bold">acesso restrito</span> que
               não existe em nenhum lugar da internet.
             </p>
             <p
-              className={`${isMobile ? "text-base px-2" : "text-xl md:text-2xl"} font-modern text-gray-300 leading-relaxed`}
+              className={`${isMobile ? "text-base px-2 mobile-text-high-contrast" : "text-xl md:text-2xl"} font-modern text-gray-300 leading-relaxed`}
             >
               Se você passar… um <span className="text-red-400 font-bold">acesso que não pode ser comprado</span> será
               revelado.
@@ -224,7 +226,7 @@ export default function LandingPage() {
             <div className="relative">
               <Button
                 onClick={handleStartQuiz}
-                className={`group relative ${isMobile ? "h-14 px-8 text-base w-full max-w-sm mx-auto" : "h-20 px-16 text-xl"} font-modern font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-2xl transform ${!isMobile ? "hover:scale-110" : ""} transition-all duration-500 border border-gray-600/50 hover:border-red-400 overflow-hidden rounded-xl`}
+                className={`group relative ${isMobile ? "h-16 px-8 text-base w-full max-w-sm mx-auto mobile-button-enhanced" : "h-20 px-16 text-xl"} font-modern font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-2xl transform ${!isMobile ? "hover:scale-110" : ""} transition-all duration-500 border border-gray-600/50 hover:border-red-400 overflow-hidden rounded-xl`}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-red-500/40 to-red-600/40 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500 animate-button-glow"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
