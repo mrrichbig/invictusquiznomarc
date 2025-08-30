@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-x: hidden; /* Previne rolagem horizontal */
+  -webkit-text-size-adjust: 100%; /* Previne zoom automático no iOS */
+  -ms-text-size-adjust: 100%; /* Previne zoom automático no Windows Phone */
+}
+
+body {
+  overflow-x: hidden; /* Previne rolagem horizontal no body */
+  -webkit-touch-callout: none; /* Desabilita callout no iOS */
+  -webkit-user-select: none; /* Desabilita seleção de texto */
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Previne zoom em inputs no mobile */
+input,
+textarea,
+select {
+  font-size: 16px !important; /* Força tamanho mínimo para prevenir zoom */
+  -webkit-user-select: text; /* Permite seleção em campos de input */
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
 @layer base {
   :root {
     --background: 210 40% 2%;
@@ -32,6 +59,10 @@
     --font-inter: "Inter", sans-serif;
     --font-playfair: "Playfair Display", serif;
     --font-cinzel: "Cinzel", serif;
+    --cyber-red-primary: #cc0000; /* Vermelho mais escuro */
+    --cyber-red-secondary: #990000; /* Vermelho muito escuro */
+    --cyber-red-accent: #ff1a1a; /* Vermelho forte */
+    --cyber-red-dark: #800000; /* Vermelho escuro profundo */
   }
 
   .dark {
@@ -159,15 +190,15 @@
 
   /* Cyber Color Palette */
   .text-cyber-red {
-    color: #ff3366;
+    color: #cc0000; /* Vermelho mais escuro */
   }
 
   .text-cyber-red-light {
-    color: #ff5577;
+    color: #ff1a1a; /* Vermelho forte */
   }
 
   .text-cyber-red-dark {
-    color: #cc1144;
+    color: #800000; /* Vermelho escuro profundo */
   }
 
   .text-cyber-blue {
@@ -231,15 +262,15 @@
   }
 
   .border-cyber {
-    border-color: rgba(255, 51, 102, 0.3);
+    border-color: rgba(204, 0, 0, 0.4); /* Usando vermelho mais escuro */
   }
 
   .border-cyber-light {
-    border-color: rgba(255, 51, 102, 0.5);
+    border-color: rgba(204, 0, 0, 0.6);
   }
 
   .border-cyber-dark {
-    border-color: rgba(255, 51, 102, 0.2);
+    border-color: rgba(128, 0, 0, 0.3);
   }
 
   /* Cyber Gradients */
@@ -252,7 +283,7 @@
   }
 
   .text-cyber-gradient {
-    background: linear-gradient(135deg, #ff3366 0%, #ff5577 50%, #ff3366 100%);
+    background: linear-gradient(135deg, #cc0000 0%, #ff1a1a 50%, #800000 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -262,20 +293,20 @@
 
   /* Enhanced Cyber Effects */
   .cyber-glow {
-    box-shadow: 0 0 20px rgba(255, 51, 102, 0.3), 0 0 40px rgba(255, 51, 102, 0.1);
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.4), 0 0 40px rgba(204, 0, 0, 0.2);
   }
 
   .cyber-glow-intense {
-    box-shadow: 0 0 30px rgba(255, 51, 102, 0.5), 0 0 60px rgba(255, 51, 102, 0.2), 0 0 90px rgba(255, 51, 102, 0.1);
+    box-shadow: 0 0 30px rgba(204, 0, 0, 0.6), 0 0 60px rgba(204, 0, 0, 0.3), 0 0 90px rgba(204, 0, 0, 0.1);
   }
 
   .cyber-text-glow {
-    text-shadow: 0 0 10px rgba(255, 51, 102, 0.6), 0 0 20px rgba(255, 51, 102, 0.4), 0 0 30px rgba(255, 51, 102, 0.2);
+    text-shadow: 0 0 10px rgba(204, 0, 0, 0.8), 0 0 20px rgba(204, 0, 0, 0.5), 0 0 30px rgba(204, 0, 0, 0.3);
   }
 
   .cyber-border-glow {
-    border: 1px solid rgba(255, 51, 102, 0.4);
-    box-shadow: inset 0 0 20px rgba(255, 51, 102, 0.1), 0 0 20px rgba(255, 51, 102, 0.2);
+    border: 1px solid rgba(204, 0, 0, 0.5);
+    box-shadow: inset 0 0 20px rgba(204, 0, 0, 0.2), 0 0 20px rgba(204, 0, 0, 0.3);
   }
 
   /* Mobile-specific optimizations */
@@ -365,16 +396,16 @@
 
   .hover-cyber-lift:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(255, 51, 102, 0.2);
+    box-shadow: 0 10px 25px rgba(204, 0, 0, 0.3);
   }
 
   .hover-cyber-glow:hover {
-    box-shadow: 0 0 20px rgba(255, 51, 102, 0.4), inset 0 0 20px rgba(255, 51, 102, 0.1);
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.5), inset 0 0 20px rgba(204, 0, 0, 0.2);
   }
 
   .hover-cyber-border:hover {
-    border-color: rgba(255, 51, 102, 0.6);
-    box-shadow: inset 0 0 10px rgba(255, 51, 102, 0.1);
+    border-color: rgba(204, 0, 0, 0.7);
+    box-shadow: inset 0 0 10px rgba(204, 0, 0, 0.2);
   }
 
   /* Focus States */
@@ -406,6 +437,15 @@
   }
   .delay-cyber-800 {
     animation-delay: 800ms;
+  }
+
+  /* Social Proof Carousel Animations */
+  .animate-scroll-right {
+    animation: scroll-right 40s linear infinite;
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 40s linear infinite;
   }
 }
 
@@ -1018,15 +1058,15 @@
 @keyframes cyberHover {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 rgba(255, 51, 102, 0);
+    box-shadow: 0 0 0 rgba(204, 0, 0, 0);
   }
   50% {
     transform: scale(1.02);
-    box-shadow: 0 0 15px rgba(255, 51, 102, 0.3);
+    box-shadow: 0 0 15px rgba(204, 0, 0, 0.4);
   }
   100% {
     transform: scale(1.01);
-    box-shadow: 0 0 10px rgba(255, 51, 102, 0.2);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.3);
   }
 }
 
@@ -1044,10 +1084,10 @@
 
 @keyframes cyberFocus {
   0% {
-    box-shadow: 0 0 0 rgba(255, 51, 102, 0);
+    box-shadow: 0 0 0 rgba(204, 0, 0, 0);
   }
   100% {
-    box-shadow: 0 0 0 3px rgba(255, 51, 102, 0.3);
+    box-shadow: 0 0 0 3px rgba(204, 0, 0, 0.4);
   }
 }
 
@@ -1105,10 +1145,10 @@
 @keyframes cyberGlowPulse {
   0%,
   100% {
-    box-shadow: 0 0 5px rgba(255, 51, 102, 0.3);
+    box-shadow: 0 0 5px rgba(204, 0, 0, 0.4);
   }
   50% {
-    box-shadow: 0 0 20px rgba(255, 51, 102, 0.6), 0 0 30px rgba(255, 51, 102, 0.3);
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.7), 0 0 30px rgba(204, 0, 0, 0.4);
   }
 }
 
@@ -1159,10 +1199,28 @@
 @keyframes cyberButtonReady {
   0%,
   100% {
-    box-shadow: 0 0 10px rgba(255, 51, 102, 0.3);
+    box-shadow: 0 0 10px rgba(204, 0, 0, 0.4);
   }
   50% {
-    box-shadow: 0 0 20px rgba(255, 51, 102, 0.5), 0 0 30px rgba(255, 51, 102, 0.2);
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.6), 0 0 30px rgba(204, 0, 0, 0.3);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
@@ -1170,7 +1228,9 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-float-mobile,
   .animate-pulse-mobile,
-  .animate-glow-mobile {
+  .animate-glow-mobile,
+  .animate-scroll-right,
+  .animate-scroll-left {
     animation: none;
   }
 }
@@ -1200,5 +1260,14 @@
 
   .mobile-title-responsive {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  /* Otimizando animações do carrossel para mobile */
+  .animate-scroll-right {
+    animation: scroll-right 35s linear infinite;
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 35s linear infinite;
   }
 }

@@ -14,6 +14,59 @@ export default function LandingPage() {
   const [showSplash, setShowSplash] = useState(true)
   const [logoAnimationComplete, setLogoAnimationComplete] = useState(false)
 
+  const socialProofs = [
+    {
+      name: "Sasuke U.",
+      avatar: "/anime-ninja-character-with-dark-hair.png",
+      comment: "Isso aqui é de outro nível... nunca vi nada igual na internet",
+    },
+    {
+      name: "Marcus V.",
+      avatar: "/professional-gamer-with-headset.png",
+      comment: "O conteúdo que está aqui não existe em lugar nenhum",
+    },
+    {
+      name: "Akira T.",
+      avatar: "/anime-character-with-spiky-hair.png",
+      comment: "Passei no teste e minha vida mudou completamente",
+    },
+    {
+      name: "Diego R.",
+      avatar: "/young-man-with-confident-expression.png",
+      comment: "Finalmente encontrei o que procurava há anos",
+    },
+    {
+      name: "Natsu D.",
+      avatar: "/pink-haired-anime-character.png",
+      comment: "Esse acesso vale mais que qualquer curso por aí",
+    },
+    {
+      name: "Rafael S.",
+      avatar: "/esports-player-with-gaming-setup.png",
+      comment: "O segredo que os 97% nunca vão descobrir",
+    },
+    {
+      name: "Ichigo K.",
+      avatar: "/anime-character-with-orange-hair.png",
+      comment: "Informações que mudaram minha perspectiva para sempre",
+    },
+    {
+      name: "Carlos M.",
+      avatar: "/businessman-with-serious-look.png",
+      comment: "Agora entendo porque é acesso restrito",
+    },
+    {
+      name: "Goku S.",
+      avatar: "/anime-character-with-spiky-black-hair.png",
+      comment: "O poder que estava escondido finalmente revelado",
+    },
+    {
+      name: "Bruno L.",
+      avatar: "/tech-professional-glasses.png",
+      comment: "Conteúdo exclusivo que não pode ser comprado",
+    },
+  ]
+
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo(0, 0)
@@ -78,6 +131,77 @@ export default function LandingPage() {
       navigator.vibrate(50)
     }
     router.push("/quiz")
+  }
+
+  const SocialProofCarousel = () => {
+    const firstRow = socialProofs.slice(0, 5)
+    const secondRow = socialProofs.slice(5, 10)
+
+    return (
+      <div className={`${isMobile ? "mt-4 mb-4" : "mt-8 mb-8"} overflow-hidden relative`}>
+        <div className="space-y-2">
+          {/* Primeira linha - rolando para direita */}
+          <div className="flex animate-scroll-right whitespace-nowrap">
+            {[...firstRow, ...firstRow, ...firstRow].map((proof, index) => (
+              <div
+                key={`row1-${index}`}
+                className={`flex-shrink-0 ${isMobile ? "w-48 mx-1" : "w-64 mx-2"} bg-cyber-darker/80 backdrop-blur-sm border border-red-900/30 rounded-lg ${isMobile ? "p-2" : "p-3"} cyber-border-glow`}
+              >
+                <div className="flex items-start space-x-2">
+                  <img
+                    src={proof.avatar || "/placeholder.svg"}
+                    alt={proof.name}
+                    className={`${isMobile ? "w-6 h-6" : "w-8 h-8"} rounded-full border-2 border-red-800/50 flex-shrink-0`}
+                  />
+                  <div className="flex-1 min-w-0">
+                    <div
+                      className={`font-modern font-semibold text-red-400 ${isMobile ? "text-xs" : "text-sm"} mb-1 truncate`}
+                    >
+                      {proof.name}
+                    </div>
+                    <div
+                      className={`text-cyber-gray-300 ${isMobile ? "text-xs leading-tight" : "text-sm leading-relaxed"} line-clamp-2`}
+                    >
+                      "{proof.comment}"
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Segunda linha - rolando para esquerda */}
+          <div className="flex animate-scroll-left whitespace-nowrap">
+            {[...secondRow, ...secondRow, ...secondRow].map((proof, index) => (
+              <div
+                key={`row2-${index}`}
+                className={`flex-shrink-0 ${isMobile ? "w-48 mx-1" : "w-64 mx-2"} bg-cyber-darker/80 backdrop-blur-sm border border-red-900/30 rounded-lg ${isMobile ? "p-2" : "p-3"} cyber-border-glow`}
+              >
+                <div className="flex items-start space-x-2">
+                  <img
+                    src={proof.avatar || "/placeholder.svg"}
+                    alt={proof.name}
+                    className={`${isMobile ? "w-6 h-6" : "w-8 h-8"} rounded-full border-2 border-red-800/50 flex-shrink-0`}
+                  />
+                  <div className="flex-1 min-w-0">
+                    <div
+                      className={`font-modern font-semibold text-red-400 ${isMobile ? "text-xs" : "text-sm"} mb-1 truncate`}
+                    >
+                      {proof.name}
+                    </div>
+                    <div
+                      className={`text-cyber-gray-300 ${isMobile ? "text-xs leading-tight" : "text-sm leading-relaxed"} line-clamp-2`}
+                    >
+                      "{proof.comment}"
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
   }
 
   // Splash Screen
@@ -206,10 +330,10 @@ export default function LandingPage() {
 
           {/* Enhanced Subtitle with staggered animation and optimized mobile text */}
           <div
-            className={`${isMobile ? "mb-10" : "mb-16"} max-w-4xl mx-auto transition-all duration-2000 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            className={`${isMobile ? "mb-8" : "mb-12"} max-w-4xl mx-auto transition-all duration-2000 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <p
-              className={`${isMobile ? "text-base px-4 leading-relaxed" : "text-xl md:text-2xl leading-relaxed"} font-modern text-cyber-gray-200 mb-6 animate-cyber-slide-in delay-cyber-300`}
+              className={`${isMobile ? "text-sm px-4 leading-relaxed" : "text-lg md:text-xl leading-relaxed"} font-modern text-cyber-gray-200 mb-4 animate-cyber-slide-in delay-cyber-300`}
             >
               Entra quem está pronto. Conteúdo de{" "}
               <span className="text-cyber-red font-semibold cyber-text-glow hover-cyber-glow transition-all duration-300 cursor-default">
@@ -218,7 +342,7 @@ export default function LandingPage() {
               que não existe em nenhum lugar da internet.
             </p>
             <p
-              className={`${isMobile ? "text-base px-4 leading-relaxed" : "text-xl md:text-2xl leading-relaxed"} font-modern text-cyber-gray-300 animate-cyber-slide-in delay-cyber-400`}
+              className={`${isMobile ? "text-sm px-4 leading-relaxed" : "text-lg md:text-xl leading-relaxed"} font-modern text-cyber-gray-300 animate-cyber-slide-in delay-cyber-400`}
             >
               Se você passar… um{" "}
               <span className="text-cyber-red font-semibold cyber-text-glow hover-cyber-glow transition-all duration-300 cursor-default">
@@ -230,45 +354,51 @@ export default function LandingPage() {
 
           {/* Enhanced CTA Section with uniform icon sizes */}
           <div
-            className={`space-y-8 transition-all duration-2000 delay-1500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            className={`space-y-6 transition-all duration-2000 delay-1500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <div className="relative animate-cyber-scale-in delay-cyber-500">
               <Button
                 onClick={handleStartQuiz}
-                className={`group relative ${isMobile ? "h-14 px-6 text-sm w-full max-w-sm mx-auto" : "h-20 px-16 text-xl"} font-modern font-bold bg-gradient-to-r from-cyber-red to-cyber-red-dark hover:from-cyber-red-light hover:to-cyber-red text-white shadow-2xl transform ${!isMobile ? "hover:scale-105 hover-cyber-lift" : ""} transition-all duration-500 cyber-border-glow overflow-hidden rounded-lg animate-cyber-button-ready hover-cyber-glow active:animate-cyber-click`}
+                className={`group relative ${isMobile ? "h-12 px-6 text-sm w-full max-w-xs mx-auto" : "h-16 px-12 text-lg"} font-modern font-bold bg-gradient-to-r from-red-800 to-red-900 hover:from-red-700 hover:to-red-800 text-white shadow-2xl transform ${!isMobile ? "hover:scale-105 hover-cyber-lift" : ""} transition-all duration-500 cyber-border-glow overflow-hidden rounded-lg animate-cyber-button-ready hover-cyber-glow active:animate-cyber-click`}
               >
-                <div className="absolute inset-0 bg-cyber-red/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-500 animate-cyber-glow-pulse"></div>
+                <div className="absolute inset-0 bg-red-900/30 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-500 animate-cyber-glow-pulse"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 <div className="flex items-center justify-center relative z-10">
                   <Zap
-                    className={`${isMobile ? "mr-2 h-5 w-5" : "mr-4 h-6 w-6"} text-red-500 transition-all duration-300 group-hover:animate-cyber-typing flex-shrink-0`}
+                    className={`${isMobile ? "mr-2 h-4 w-4" : "mr-3 h-5 w-5"} text-red-400 transition-all duration-300 group-hover:animate-cyber-typing flex-shrink-0`}
                   />
                   <span className={`tracking-wide ${isMobile ? "text-center leading-tight" : ""}`}>
-                    {isMobile ? "INICIAR TESTE INVICTUS" : "INICIAR O TESTE INVICTUS"}
+                    {isMobile ? "INICIAR TESTE" : "INICIAR O TESTE INVICTUS"}
                   </span>
                   <Crown
-                    className={`${isMobile ? "ml-2 h-5 w-5" : "ml-4 h-6 w-6"} text-red-500 transition-all duration-300 group-hover:animate-cyber-typing flex-shrink-0`}
+                    className={`${isMobile ? "ml-2 h-4 w-4" : "ml-3 h-5 w-5"} text-red-400 transition-all duration-300 group-hover:animate-cyber-typing flex-shrink-0`}
                   />
                 </div>
               </Button>
             </div>
           </div>
 
+          <div
+            className={`transition-all duration-2000 delay-2000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          >
+            <SocialProofCarousel />
+          </div>
+
           {/* Enhanced Stats with uniform sizing and better mobile optimization */}
           <div
-            className={`${isMobile ? "mt-12" : "mt-20"} grid grid-cols-3 ${isMobile ? "gap-4 max-w-sm" : "gap-12 max-w-lg"} mx-auto transition-all duration-2000 delay-2000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            className={`${isMobile ? "mt-6" : "mt-10"} grid grid-cols-3 ${isMobile ? "gap-3 max-w-xs" : "gap-8 max-w-md"} mx-auto transition-all duration-2000 delay-2500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             {[
-              { value: "97%", label: "Reprovados", color: "text-red-500", delay: "delay-cyber-600" },
-              { value: "3%", label: "Elite", color: "text-red-400", delay: "delay-cyber-700" },
-              { value: "∞", label: "Potencial", color: "text-red-600", delay: "delay-cyber-800" },
+              { value: "97%", label: "Reprovados", color: "text-red-600", delay: "delay-cyber-600" },
+              { value: "3%", label: "Elite", color: "text-red-500", delay: "delay-cyber-700" },
+              { value: "∞", label: "Potencial", color: "text-red-700", delay: "delay-cyber-800" },
             ].map((stat, index) => (
               <div
                 key={index}
                 className={`text-center group transition-all duration-1000 animate-cyber-fade-up ${stat.delay} hover-cyber-lift cursor-default`}
               >
                 <div
-                  className={`${isMobile ? "text-2xl" : "text-3xl"} font-modern font-bold ${stat.color} group-hover:scale-110 transition-all duration-300 cyber-text-glow group-hover:animate-cyber-typing`}
+                  className={`${isMobile ? "text-xl" : "text-2xl"} font-modern font-bold ${stat.color} group-hover:scale-110 transition-all duration-300 cyber-text-glow group-hover:animate-cyber-typing`}
                 >
                   {stat.value}
                 </div>

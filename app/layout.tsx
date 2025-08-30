@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   title: "Invictus Quiz - A Chave Para Seu Sucesso",
   description:
     "Este não é apenas um quiz. É a chave que separa os sonhadores dos conquistadores. Apenas os verdadeiros INVICTOS conseguem passar.",
+  viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
     generator: 'v0.app'
 }
 
@@ -32,6 +33,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} ${cinzel.variable}`}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )
