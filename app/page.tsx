@@ -103,7 +103,6 @@ export default function LandingPage() {
         {/* Splash Logo */}
         <div className="relative z-10">
           <div className="relative inline-block">
-            <div className="absolute -inset-8 bg-cyber-red/20 rounded-full blur-2xl animate-cyber-glow-pulse"></div>
             <img
               src="/logo.png"
               alt="Logo Invictus"
@@ -181,11 +180,6 @@ export default function LandingPage() {
           {/* Enhanced Logo with micro-interactions */}
           <div className={`${isMobile ? "mb-8" : "mb-12"} relative animate-cyber-scale-in`}>
             <div className="relative inline-block group">
-              <div className="absolute -inset-8 bg-cyber-red/20 rounded-full blur-2xl animate-cyber-glow-pulse"></div>
-              <div
-                className="absolute -inset-4 bg-cyber-blue/10 rounded-full blur-xl animate-cyber-glow-pulse"
-                style={{ animationDelay: "1s" }}
-              ></div>
               <img
                 src="/logo.png"
                 alt="Logo Invictus"
