@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
+    --background: 210 40% 2%;
+    --foreground: 0 0% 95%;
+    --card: 210 40% 4%;
+    --card-foreground: 0 0% 95%;
+    --popover: 210 40% 4%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 72% 51%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --secondary: 210 40% 8%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 210 40% 8%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 210 40% 8%;
+    --accent-foreground: 0 0% 95%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --border: 210 40% 12%;
+    --input: 210 40% 12%;
+    --ring: 0 72% 51%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -35,25 +35,25 @@
   }
 
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 210 40% 2%;
+    --foreground: 0 0% 95%;
+    --card: 210 40% 4%;
+    --card-foreground: 0 0% 95%;
+    --popover: 210 40% 4%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 40% 8%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 210 40% 8%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 210 40% 8%;
+    --accent-foreground: 0 0% 95%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: 210 40% 12%;
+    --input: 210 40% 12%;
+    --ring: 0 72% 51%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -157,254 +157,149 @@
     animation: successMobile 1s ease-out forwards;
   }
 
-  /* Mobile-specific delays */
-  .delay-mobile-100 {
-    animation-delay: 100ms;
-  }
-  .delay-mobile-200 {
-    animation-delay: 200ms;
-  }
-  .delay-mobile-300 {
-    animation-delay: 300ms;
-  }
-  .delay-mobile-400 {
-    animation-delay: 400ms;
-  }
-  .delay-mobile-500 {
-    animation-delay: 500ms;
+  /* Cyber Color Palette */
+  .text-cyber-red {
+    color: #ff3366;
   }
 
-  /* Touch-friendly utilities */
-  .touch-action-manipulation {
-    touch-action: manipulation;
+  .text-cyber-red-light {
+    color: #ff5577;
   }
 
-  .tap-highlight-none {
-    -webkit-tap-highlight-color: transparent;
+  .text-cyber-red-dark {
+    color: #cc1144;
   }
 
-  /* Mobile-optimized focus states */
-  .focus-mobile {
-    @apply focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50;
+  .text-cyber-blue {
+    color: #00d4ff;
   }
 
-  /* Cinematic Animations */
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  .text-cyber-purple {
+    color: #8855ff;
   }
 
-  .animate-float-rotate {
-    animation: floatRotate 8s ease-in-out infinite;
+  .text-cyber-green {
+    color: #00ff88;
   }
 
-  .animate-float-rotate-reverse {
-    animation: floatRotateReverse 10s ease-in-out infinite;
+  .text-cyber-gray-100 {
+    color: #f0f2f5;
   }
 
-  .animate-morph {
-    animation: morph 4s ease-in-out infinite;
+  .text-cyber-gray-200 {
+    color: #e1e5e9;
   }
 
-  .animate-scan {
-    animation: scan 3s linear infinite;
+  .text-cyber-gray-300 {
+    color: #c4cdd5;
   }
 
-  .animate-scan-slow {
-    animation: scan 8s linear infinite;
+  .text-cyber-gray-400 {
+    color: #9aa5b1;
   }
 
-  .animate-shimmer {
-    animation: shimmer 3s ease-in-out infinite;
+  .text-cyber-gray-500 {
+    color: #6b7684;
   }
 
-  .animate-logo-entrance {
-    animation: logoEntrance 2s ease-out;
+  .text-cyber-gray-600 {
+    color: #4a5568;
   }
 
-  .animate-blink {
-    animation: blink 1s infinite;
+  .text-cyber-gray-700 {
+    color: #2d3748;
   }
 
-  .animate-pulse-glow {
-    animation: pulseGlow 3s ease-in-out infinite;
+  .text-cyber-gray-800 {
+    color: #1a202c;
   }
 
-  .animate-pulse-slow {
-    animation: pulseSlow 4s ease-in-out infinite;
+  .text-cyber-gray-900 {
+    color: #0f1419;
   }
 
-  .animate-pulse-text {
-    animation: pulseText 2s ease-in-out infinite;
+  .bg-cyber-dark {
+    background-color: #0a0e1a;
   }
 
-  .animate-pulse-intense {
-    animation: pulseIntense 0.5s ease-in-out infinite;
+  .bg-cyber-darker {
+    background-color: #050810;
   }
 
-  .animate-text-glow {
-    animation: textGlow 2s ease-in-out infinite;
+  .bg-cyber-card {
+    background-color: rgba(15, 20, 35, 0.8);
   }
 
-  .animate-button-glow {
-    animation: buttonGlow 2s ease-in-out infinite;
+  .border-cyber {
+    border-color: rgba(255, 51, 102, 0.3);
   }
 
-  .animate-border-glow {
-    animation: borderGlow 3s ease-in-out infinite;
+  .border-cyber-light {
+    border-color: rgba(255, 51, 102, 0.5);
   }
 
-  .animate-shine {
-    animation: shine 3s ease-in-out infinite;
+  .border-cyber-dark {
+    border-color: rgba(255, 51, 102, 0.2);
   }
 
-  .animate-electric {
-    animation: electric 0.3s ease-in-out;
+  /* Cyber Gradients */
+  .bg-cyber-gradient {
+    background: linear-gradient(135deg, #0a0e1a 0%, #1a1f35 25%, #0f1419 50%, #1a202c 75%, #0a0e1a 100%);
   }
 
-  .animate-crown-float {
-    animation: crownFloat 1s ease-in-out;
+  .bg-cyber-gradient-card {
+    background: linear-gradient(135deg, rgba(15, 20, 35, 0.9) 0%, rgba(26, 31, 53, 0.8) 50%, rgba(15, 20, 25, 0.9) 100%);
   }
 
-  .animate-counter {
-    animation: counter 2s ease-out;
+  .text-cyber-gradient {
+    background: linear-gradient(135deg, #ff3366 0%, #ff5577 50%, #ff3366 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: cyberShimmer 3s ease-in-out infinite;
   }
 
-  .animate-expand {
-    animation: expand 1s ease-out;
+  /* Enhanced Cyber Effects */
+  .cyber-glow {
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.3), 0 0 40px rgba(255, 51, 102, 0.1);
   }
 
-  .animate-fade-in-up {
-    animation: fadeInUp 1s ease-out forwards;
-    opacity: 0;
+  .cyber-glow-intense {
+    box-shadow: 0 0 30px rgba(255, 51, 102, 0.5), 0 0 60px rgba(255, 51, 102, 0.2), 0 0 90px rgba(255, 51, 102, 0.1);
   }
 
-  .animate-fade-in-right {
-    animation: fadeInRight 0.8s ease-out forwards;
-    opacity: 0;
+  .cyber-text-glow {
+    text-shadow: 0 0 10px rgba(255, 51, 102, 0.6), 0 0 20px rgba(255, 51, 102, 0.4), 0 0 30px rgba(255, 51, 102, 0.2);
   }
 
-  .animate-slide-in {
-    animation: slideIn 1s ease-out;
+  .cyber-border-glow {
+    border: 1px solid rgba(255, 51, 102, 0.4);
+    box-shadow: inset 0 0 20px rgba(255, 51, 102, 0.1), 0 0 20px rgba(255, 51, 102, 0.2);
   }
 
-  .animate-success-bounce {
-    animation: successBounce 2s ease-out;
+  /* Mobile-specific optimizations */
+  .mobile-particles {
+    display: none;
   }
 
-  .animate-success-glow {
-    animation: successGlow 3s ease-in-out infinite;
+  .mobile-bg-simple {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #7f1d1d 100%);
   }
 
-  .animate-code-glow {
-    animation: codeGlow 2s ease-in-out infinite;
+  /* Touch-friendly buttons */
+  .mobile-button {
+    min-height: 48px;
+    min-width: 48px;
   }
 
-  .animate-star-twinkle {
-    animation: starTwinkle 2s ease-in-out infinite;
+  /* Optimized text sizes */
+  .mobile-text-responsive {
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
   }
 
-  .animate-target-pulse {
-    animation: targetPulse 2s ease-in-out infinite;
-  }
-
-  .animate-badge-glow {
-    animation: badgeGlow 3s ease-in-out infinite;
-  }
-
-  .animate-light-sweep {
-    animation: lightSweep 8s ease-in-out infinite;
-  }
-
-  .focus\:shadow-red-glow:focus {
-    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
-  }
-
-  /* Delay utilities */
-  .delay-200 {
-    animation-delay: 200ms;
-  }
-  .delay-300 {
-    animation-delay: 300ms;
-  }
-  .delay-400 {
-    animation-delay: 400ms;
-  }
-  .delay-500 {
-    animation-delay: 500ms;
-  }
-  .delay-600 {
-    animation-delay: 600ms;
-  }
-  .delay-700 {
-    animation-delay: 700ms;
-  }
-  .delay-1000 {
-    animation-delay: 1000ms;
-  }
-  .delay-1200 {
-    animation-delay: 1200ms;
-  }
-  .delay-1500 {
-    animation-delay: 1500ms;
-  }
-  .delay-1700 {
-    animation-delay: 1700ms;
-  }
-  .delay-2000 {
-    animation-delay: 2000ms;
-  }
-  .delay-2200 {
-    animation-delay: 2200ms;
-  }
-  .delay-2400 {
-    animation-delay: 2400ms;
-  }
-  .delay-2500 {
-    animation-delay: 2500ms;
-  }
-  .delay-3000 {
-    animation-delay: 3000ms;
-  }
-
-  /* Hacker/Crypto Effects */
-  .animate-matrix-rain {
-    animation: matrixRain 8s linear infinite;
-  }
-
-  .animate-binary-flow {
-    animation: binaryFlow 12s linear infinite;
-  }
-
-  .animate-hex-glow {
-    animation: hexGlow 3s ease-in-out infinite;
-  }
-
-  .animate-decrypt {
-    animation: decrypt 2s ease-out forwards;
-  }
-
-  .animate-network-pulse {
-    animation: networkPulse 4s ease-in-out infinite;
-  }
-
-  .animate-code-scroll {
-    animation: codeScroll 6s ease-in-out infinite;
-  }
-
-  /* Hacker text effects */
-  .text-hacker-glow {
-    text-shadow: 0 0 10px rgba(239, 68, 68, 0.6), 0 0 20px rgba(239, 68, 68, 0.4);
-  }
-
-  .text-binary {
-    font-family: "Courier New", monospace;
-    letter-spacing: 2px;
-  }
-
-  .text-hex {
-    font-family: "Courier New", monospace;
-    color: #ef4444;
-    text-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+  .mobile-title-responsive {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
 }
 
@@ -971,6 +866,45 @@
   }
   100% {
     transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+/* Cyber Animation Keyframes */
+@keyframes cyberShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes cyberPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes cyberScan {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
     opacity: 0;
   }
 }

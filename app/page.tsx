@@ -83,13 +83,13 @@ export default function LandingPage() {
   // Splash Screen
   if (showSplash) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
-        {/* Clean background particles for splash */}
+      <div className="min-h-screen bg-cyber-darker flex items-center justify-center relative overflow-hidden">
+        {/* Enhanced background particles for splash */}
         <div className="absolute inset-0">
           {[...Array(isMobile ? 3 : 8)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-red-500/40 rounded-full animate-float-mobile"
+              className="absolute w-1 h-1 bg-cyber-red/50 rounded-full animate-float-mobile"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -103,10 +103,11 @@ export default function LandingPage() {
         {/* Splash Logo */}
         <div className="relative z-10">
           <div className="relative inline-block">
+            <div className="absolute -inset-8 bg-cyber-red/20 rounded-full blur-2xl animate-cyber-pulse"></div>
             <img
               src="/logo.png"
               alt="Logo Invictus"
-              className={`${isMobile ? "h-32 w-32" : "h-48 w-48"} mx-auto transition-all duration-3000 ease-out drop-shadow-2xl ${
+              className={`${isMobile ? "h-32 w-32" : "h-48 w-48"} mx-auto transition-all duration-3000 ease-out drop-shadow-2xl relative z-10 ${
                 logoAnimationComplete ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-50 translate-y-10"
               }`}
             />
@@ -117,15 +118,19 @@ export default function LandingPage() {
   }
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden relative`}>
-      {/* Clean Background Effects */}
+    <div className={`min-h-screen bg-cyber-gradient overflow-hidden relative`}>
+      {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
-        {/* Minimal particles */}
+        {/* Refined particles */}
         {[...Array(isMobile ? 5 : 15)].map((_, i) => (
           <div
             key={i}
             className={`absolute rounded-full ${
-              i % 2 === 0 ? "w-1 h-1 bg-red-500/40" : "w-0.5 h-0.5 bg-red-400/30"
+              i % 3 === 0
+                ? "w-1 h-1 bg-cyber-red/50"
+                : i % 3 === 1
+                  ? "w-0.5 h-0.5 bg-cyber-blue/40"
+                  : "w-1.5 h-1.5 bg-cyber-purple/30"
             } animate-float-mobile`}
             style={{
               left: `${Math.random() * 100}%`,
@@ -136,18 +141,29 @@ export default function LandingPage() {
           />
         ))}
 
-        {/* Clean geometric grid */}
+        {/* Enhanced geometric grid */}
         {!isMobile && (
-          <div className="absolute inset-0 pointer-events-none opacity-10">
+          <div className="absolute inset-0 pointer-events-none opacity-15">
             <div
               className="absolute inset-0"
               style={{
                 backgroundImage: `
-                linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)
+                linear-gradient(rgba(255, 51, 102, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 51, 102, 0.15) 1px, transparent 1px)
               `,
-                backgroundSize: "50px 50px",
+                backgroundSize: "60px 60px",
               }}
+            ></div>
+          </div>
+        )}
+
+        {/* Cyber scan lines */}
+        {!isMobile && (
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyber-red/30 to-transparent animate-cyber-scan"></div>
+            <div
+              className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyber-blue/20 to-transparent animate-cyber-scan"
+              style={{ animationDelay: "1.5s" }}
             ></div>
           </div>
         )}
@@ -161,90 +177,95 @@ export default function LandingPage() {
             isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-20 scale-95"
           }`}
         >
-          {/* Clean Logo */}
+          {/* Enhanced Logo */}
           <div className={`${isMobile ? "mb-8" : "mb-12"} relative`}>
-            <div className="relative inline-block">
+            <div className="relative inline-block group">
+              <div className="absolute -inset-8 bg-cyber-red/20 rounded-full blur-2xl animate-cyber-pulse"></div>
+              <div
+                className="absolute -inset-4 bg-cyber-blue/10 rounded-full blur-xl animate-cyber-pulse"
+                style={{ animationDelay: "1s" }}
+              ></div>
               <img
                 src="/logo.png"
                 alt="Logo Invictus"
-                className={`${isMobile ? "h-20 w-20" : "h-40 w-40"} mx-auto transition-all duration-1000 ${!isMobile ? "hover:scale-110" : ""} drop-shadow-2xl`}
+                className={`${isMobile ? "h-20 w-20" : "h-40 w-40"} mx-auto transition-all duration-1000 ${!isMobile ? "group-hover:scale-110" : ""} drop-shadow-2xl relative z-10`}
               />
             </div>
           </div>
 
-          {/* Typing Animation */}
+          {/* Enhanced Typing Animation */}
           <div className={`${isMobile ? "mb-6" : "mb-8"}`}>
             <div className={`${isMobile ? "h-12" : "h-24"} flex items-center justify-center`}>
               <div className="relative">
                 <h1
-                  className={`${isMobile ? "text-xl" : "text-3xl md:text-4xl"} font-modern font-bold text-red-400 tracking-wider`}
+                  className={`${isMobile ? "text-xl" : "text-3xl md:text-4xl"} font-modern font-bold text-cyber-gradient tracking-wider cyber-text-glow`}
                 >
                   {typingText}
                   <span
-                    className={`inline-block w-1 ${isMobile ? "h-5" : "h-8"} bg-red-400 ml-2 ${isTyping ? "animate-blink-mobile" : "opacity-0"}`}
+                    className={`inline-block w-1 ${isMobile ? "h-5" : "h-8"} bg-cyber-red ml-2 ${isTyping ? "animate-blink-mobile" : "opacity-0"}`}
                   ></span>
                 </h1>
               </div>
             </div>
           </div>
 
-          {/* Clean Subtitle */}
+          {/* Enhanced Subtitle */}
           <div
             className={`${isMobile ? "mb-10" : "mb-16"} max-w-4xl mx-auto transition-all duration-2000 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <p
-              className={`${isMobile ? "text-base px-2" : "text-xl md:text-2xl"} font-modern text-gray-300 leading-relaxed mb-6`}
+              className={`${isMobile ? "text-base px-2" : "text-xl md:text-2xl"} font-modern text-cyber-gray-200 leading-relaxed mb-6`}
             >
-              Entra quem está pronto. Conteúdo de <span className="text-red-400 font-semibold">acesso restrito</span>{" "}
-              que não existe em nenhum lugar da internet.
+              Entra quem está pronto. Conteúdo de{" "}
+              <span className="text-cyber-red font-semibold cyber-text-glow">acesso restrito</span> que não existe em
+              nenhum lugar da internet.
             </p>
             <p
-              className={`${isMobile ? "text-base px-2" : "text-xl md:text-2xl"} font-modern text-gray-400 leading-relaxed`}
+              className={`${isMobile ? "text-base px-2" : "text-xl md:text-2xl"} font-modern text-cyber-gray-300 leading-relaxed`}
             >
-              Se você passar… um <span className="text-red-400 font-semibold">acesso que não pode ser comprado</span>{" "}
+              Se você passar… um{" "}
+              <span className="text-cyber-red font-semibold cyber-text-glow">acesso que não pode ser comprado</span>{" "}
               será revelado.
             </p>
           </div>
 
-          {/* Clean CTA Section */}
+          {/* Enhanced CTA Section */}
           <div
             className={`space-y-8 transition-all duration-2000 delay-1500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <div className="relative">
               <Button
                 onClick={handleStartQuiz}
-                className={`group relative ${isMobile ? "h-14 px-8 text-base w-full max-w-sm mx-auto" : "h-20 px-16 text-xl"} font-modern font-bold bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white shadow-xl transform ${!isMobile ? "hover:scale-105" : ""} transition-all duration-500 border border-red-500/50 hover:border-red-400/70 overflow-hidden rounded-lg`}
+                className={`group relative ${isMobile ? "h-14 px-8 text-base w-full max-w-sm mx-auto" : "h-20 px-16 text-xl"} font-modern font-bold bg-gradient-to-r from-cyber-red to-cyber-red-dark hover:from-cyber-red-light hover:to-cyber-red text-white shadow-2xl transform ${!isMobile ? "hover:scale-105" : ""} transition-all duration-500 cyber-border-glow overflow-hidden rounded-lg`}
               >
-                <div className="flex items-center justify-center">
-                  <Zap
-                    className={`${isMobile ? "mr-2 h-4 w-4" : "mr-4 h-6 w-6"} transition-all duration-300 relative z-10`}
-                  />
-                  <span className="relative z-10 tracking-wide">INICIAR O TESTE INVICTUS</span>
-                  <Crown
-                    className={`${isMobile ? "ml-2 h-4 w-4" : "ml-4 h-6 w-6"} transition-all duration-300 relative z-10`}
-                  />
+                <div className="absolute inset-0 bg-cyber-red/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-500 animate-cyber-pulse"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                <div className="flex items-center justify-center relative z-10">
+                  <Zap className={`${isMobile ? "mr-2 h-4 w-4" : "mr-4 h-6 w-6"} transition-all duration-300`} />
+                  <span className="tracking-wide">INICIAR O TESTE INVICTUS</span>
+                  <Crown className={`${isMobile ? "ml-2 h-4 w-4" : "ml-4 h-6 w-6"} transition-all duration-300`} />
                 </div>
               </Button>
             </div>
           </div>
 
-          {/* Clean Stats */}
+          {/* Enhanced Stats */}
           <div
             className={`${isMobile ? "mt-12" : "mt-20"} grid grid-cols-3 ${isMobile ? "gap-6 max-w-xs" : "gap-12 max-w-lg"} mx-auto transition-all duration-2000 delay-2000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             {[
-              { value: "97%", label: "Reprovados" },
-              { value: "3%", label: "Elite" },
-              { value: "∞", label: "Potencial" },
+              { value: "97%", label: "Reprovados", color: "text-cyber-red" },
+              { value: "3%", label: "Elite", color: "text-cyber-blue" },
+              { value: "∞", label: "Potencial", color: "text-cyber-purple" },
             ].map((stat, index) => (
               <div key={index} className="text-center group transition-all duration-1000">
                 <div
-                  className={`${isMobile ? "text-xl" : "text-3xl"} font-modern font-bold text-red-400 group-hover:text-red-300 transition-colors duration-300`}
+                  className={`${isMobile ? "text-xl" : "text-3xl"} font-modern font-bold ${stat.color} group-hover:scale-110 transition-all duration-300 cyber-text-glow`}
                 >
                   {stat.value}
                 </div>
                 <div
-                  className={`${isMobile ? "text-xs" : "text-sm"} font-modern text-gray-500 group-hover:text-gray-400 transition-colors duration-300 mt-2`}
+                  className={`${isMobile ? "text-xs" : "text-sm"} font-modern text-cyber-gray-400 group-hover:text-cyber-gray-300 transition-colors duration-300 mt-2`}
                 >
                   {stat.label}
                 </div>
