@@ -124,7 +124,7 @@ export default function Aprovado() {
             <div className="relative inline-block">
               <div className="absolute -inset-4 bg-cyber-green/20 rounded-full blur-xl animate-cyber-pulse"></div>
               <CheckCircle
-                className={`${isMobile ? "h-16 w-16" : "h-20 w-20"} text-cyber-green mx-auto drop-shadow-lg transition-transform duration-500 hover:scale-110 relative z-10 cyber-text-glow`}
+                className={`${isMobile ? "h-16 w-16" : "h-20 w-20"} text-red-500 mx-auto drop-shadow-lg transition-transform duration-500 hover:scale-110 relative z-10 cyber-text-glow`}
               />
             </div>
           </div>
@@ -150,7 +150,7 @@ export default function Aprovado() {
               <h3
                 className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-cyber-gray-200 mb-3 flex items-center justify-center gap-2`}
               >
-                <Target className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-cyber-red cyber-text-glow`} />
+                <Target className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500 cyber-text-glow`} />
                 SEU CÓDIGO INVICTO
               </h3>
 
@@ -195,7 +195,7 @@ export default function Aprovado() {
             <h3
               className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-semibold text-cyber-gray-100 mb-6 flex items-center justify-center gap-2`}
             >
-              <Star className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-cyber-blue cyber-text-glow`} />O que você pode
+              <Star className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500 cyber-text-glow`} />O que você pode
               receber:
             </h3>
 
@@ -211,7 +211,7 @@ export default function Aprovado() {
                   className="flex items-center gap-3 font-modern leading-relaxed hover:text-cyber-gray-100 transition-colors duration-300 cursor-default"
                 >
                   <CheckCircle
-                    className={`${isMobile ? "h-3 w-3" : "h-4 w-4"} text-cyber-green flex-shrink-0 cyber-text-glow`}
+                    className={`${isMobile ? "h-3 w-3" : "h-4 w-4"} text-red-500 flex-shrink-0 cyber-text-glow`}
                   />
                   <span>{benefit}</span>
                 </li>
@@ -241,7 +241,7 @@ export default function Aprovado() {
                 className="flex items-center gap-2"
               >
                 <Instagram
-                  className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-cyber-purple group-hover:text-cyber-blue transition-colors duration-300`}
+                  className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500 group-hover:text-red-400 transition-colors duration-300`}
                 />
                 <span className="group-hover:cyber-text-glow transition-all duration-300">@aordeminvictus</span>
               </a>
@@ -257,7 +257,7 @@ export default function Aprovado() {
             <div
               className={`bg-cyber-card/40 rounded-lg ${isMobile ? "p-5" : "p-6"} cyber-border-glow relative overflow-hidden backdrop-blur-sm hover:cyber-glow transition-all duration-500`}
             >
-              <Target className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-cyber-blue mx-auto mb-3 cyber-text-glow`} />
+              <Target className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500 mx-auto mb-3 cyber-text-glow`} />
               <p className={`${isMobile ? "text-xs" : "text-sm"} text-cyber-gray-300 font-modern leading-relaxed`}>
                 Aguarde nosso contato. A análise das respostas pode levar até 24 horas.
               </p>

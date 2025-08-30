@@ -241,9 +241,13 @@ export default function LandingPage() {
                 <div className="absolute inset-0 bg-cyber-red/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-500 animate-cyber-pulse"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 <div className="flex items-center justify-center relative z-10">
-                  <Zap className={`${isMobile ? "mr-2 h-4 w-4" : "mr-4 h-6 w-6"} transition-all duration-300`} />
+                  <Zap
+                    className={`${isMobile ? "mr-2 h-4 w-4" : "mr-4 h-6 w-6"} text-red-500 transition-all duration-300`}
+                  />
                   <span className="tracking-wide">INICIAR O TESTE INVICTUS</span>
-                  <Crown className={`${isMobile ? "ml-2 h-4 w-4" : "ml-4 h-6 w-6"} transition-all duration-300`} />
+                  <Crown
+                    className={`${isMobile ? "ml-2 h-4 w-4" : "ml-4 h-6 w-6"} text-red-500 transition-all duration-300`}
+                  />
                 </div>
               </Button>
             </div>
@@ -254,9 +258,9 @@ export default function LandingPage() {
             className={`${isMobile ? "mt-12" : "mt-20"} grid grid-cols-3 ${isMobile ? "gap-6 max-w-xs" : "gap-12 max-w-lg"} mx-auto transition-all duration-2000 delay-2000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             {[
-              { value: "97%", label: "Reprovados", color: "text-cyber-red" },
-              { value: "3%", label: "Elite", color: "text-cyber-blue" },
-              { value: "∞", label: "Potencial", color: "text-cyber-purple" },
+              { value: "97%", label: "Reprovados", color: "text-red-500" },
+              { value: "3%", label: "Elite", color: "text-red-400" },
+              { value: "∞", label: "Potencial", color: "text-red-600" },
             ].map((stat, index) => (
               <div key={index} className="text-center group transition-all duration-1000">
                 <div

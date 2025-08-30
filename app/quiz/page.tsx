@@ -162,7 +162,7 @@ export default function InvictusQuiz() {
                 <h2
                   className={`${isMobile ? "text-xl" : "text-2xl"} font-modern font-bold text-cyber-gray-100 border-b border-cyber pb-4 flex items-center gap-3`}
                 >
-                  <Zap className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-cyber-red cyber-text-glow`} />
+                  <Zap className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500 cyber-text-glow`} />
                   Seus Dados Pessoais
                 </h2>
 
@@ -228,7 +228,7 @@ export default function InvictusQuiz() {
                 <h2
                   className={`${isMobile ? "text-xl" : "text-2xl"} font-modern font-bold text-cyber-gray-100 border-b border-cyber pb-4 flex items-center gap-3`}
                 >
-                  <Crown className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-cyber-red cyber-text-glow`} />
+                  <Crown className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500 cyber-text-glow`} />
                   Avaliação Exclusiva
                 </h2>
 
@@ -363,13 +363,13 @@ export default function InvictusQuiz() {
                   <div className="absolute inset-0 bg-cyber-red/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-500 animate-cyber-pulse"></div>
                   <div className="flex items-center justify-center w-full relative z-10">
                     <Crown
-                      className={`${isMobile ? "mr-2 h-4 w-4 flex-shrink-0" : "mr-4 h-5 w-5"} transition-all duration-300`}
+                      className={`${isMobile ? "mr-2 h-4 w-4 flex-shrink-0" : "mr-4 h-5 w-5"} text-red-500 transition-all duration-300`}
                     />
                     <span className={`tracking-wide text-center ${isMobile ? "text-sm leading-tight" : "text-lg"}`}>
                       {isMobile ? "SOLICITAR ACESSO À COMUNIDADE" : "SOLICITAR ACESSO À COMUNIDADE INVICTUS"}
                     </span>
                     <Crown
-                      className={`${isMobile ? "ml-2 h-4 w-4 flex-shrink-0" : "ml-4 h-5 w-5"} transition-all duration-300`}
+                      className={`${isMobile ? "ml-2 h-4 w-4 flex-shrink-0" : "ml-4 h-5 w-5"} text-red-500 transition-all duration-300`}
                     />
                   </div>
                 </Button>
