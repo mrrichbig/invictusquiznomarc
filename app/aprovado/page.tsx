@@ -136,7 +136,7 @@ export default function Aprovado() {
 
           {/* Enhanced Title */}
           <h1
-            className={`${isMobile ? "text-2xl" : "text-3xl"} font-modern font-bold text-cyber-gray-100 mb-8 transition-all duration-1000 delay-300 ${
+            className={`${isMobile ? "text-xl" : "text-3xl"} font-modern font-bold text-cyber-gray-100 mb-8 transition-all duration-1000 delay-300 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             } cyber-text-glow animate-cyber-slide-in delay-cyber-300`}
           >
@@ -153,16 +153,16 @@ export default function Aprovado() {
               className={`bg-cyber-card rounded-lg ${isMobile ? "p-6" : "p-8"} cyber-border-glow relative overflow-hidden backdrop-blur-sm hover:cyber-glow-intense transition-all duration-500 hover-cyber-lift animate-cyber-scale-in delay-cyber-400`}
             >
               <h3
-                className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-cyber-gray-200 mb-3 flex items-center justify-center gap-2`}
+                className={`${isMobile ? "text-sm" : "text-lg"} font-modern font-semibold text-cyber-gray-200 mb-3 flex items-center justify-center gap-2`}
               >
                 <Target
-                  className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500 cyber-text-glow animate-cyber-glow-pulse`}
+                  className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500 cyber-text-glow animate-cyber-glow-pulse flex-shrink-0`}
                 />
-                SEU CÓDIGO INVICTO
+                <span className={`${isMobile ? "text-sm" : ""}`}>SEU CÓDIGO INVICTO</span>
               </h3>
 
               <div
-                className={`${isMobile ? "text-xl" : "text-2xl"} font-mono font-bold text-cyber-red tracking-wider cyber-text-glow hover:animate-cyber-typing cursor-default`}
+                className={`${isMobile ? "text-lg" : "text-2xl"} font-mono font-bold text-cyber-red tracking-wider cyber-text-glow hover:animate-cyber-typing cursor-default`}
               >
                 {showTypewriter ? typewriterCode : codigoInvicto}
                 {showTypewriter && typewriterCode.length < codigoInvicto.length && (
@@ -183,7 +183,7 @@ export default function Aprovado() {
             }`}
           >
             <p
-              className={`${isMobile ? "text-base" : "text-lg"} font-modern text-cyber-gray-200 leading-relaxed animate-cyber-slide-in delay-cyber-500`}
+              className={`${isMobile ? "text-sm leading-relaxed" : "text-lg"} font-modern text-cyber-gray-200 animate-cyber-slide-in delay-cyber-500`}
             >
               Suas respostas foram registradas e serão analisadas pela{" "}
               <span className="text-cyber-red font-semibold cyber-text-glow hover:animate-cyber-typing cursor-default">
@@ -193,7 +193,7 @@ export default function Aprovado() {
             </p>
 
             <p
-              className={`${isMobile ? "text-sm" : "text-base"} font-modern text-cyber-gray-300 leading-relaxed animate-cyber-slide-in delay-cyber-600`}
+              className={`${isMobile ? "text-sm leading-relaxed" : "text-base"} font-modern text-cyber-gray-300 animate-cyber-slide-in delay-cyber-600`}
             >
               Em breve entraremos em contato através do seu{" "}
               <span className="text-cyber-gray-100 font-semibold hover:text-cyber-red transition-colors duration-300 cursor-default">
@@ -210,12 +210,12 @@ export default function Aprovado() {
             }`}
           >
             <h3
-              className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-semibold text-cyber-gray-100 mb-6 flex items-center justify-center gap-2`}
+              className={`${isMobile ? "text-base" : "text-xl"} font-modern font-semibold text-cyber-gray-100 mb-6 flex items-center justify-center gap-2`}
             >
               <Star
-                className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500 cyber-text-glow animate-cyber-glow-pulse`}
+                className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500 cyber-text-glow animate-cyber-glow-pulse flex-shrink-0`}
               />
-              O que você pode receber:
+              <span className={`${isMobile ? "text-sm" : ""}`}>O que você pode receber:</span>
             </h3>
 
             <ul className={`text-left space-y-3 text-cyber-gray-200 ${isMobile ? "text-sm" : "text-base"}`}>
@@ -233,7 +233,7 @@ export default function Aprovado() {
                   <CheckCircle
                     className={`${isMobile ? "h-3 w-3" : "h-4 w-4"} text-red-500 flex-shrink-0 cyber-text-glow hover:animate-cyber-typing`}
                   />
-                  <span>{benefit}</span>
+                  <span className={`${isMobile ? "text-sm leading-relaxed" : ""}`}>{benefit}</span>
                 </li>
               ))}
             </ul>
@@ -264,7 +264,7 @@ export default function Aprovado() {
                   className="flex items-center gap-2"
                 >
                   <Instagram
-                    className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500 group-hover:text-red-400 transition-colors duration-300 group-hover:animate-cyber-typing`}
+                    className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500 group-hover:text-red-400 transition-colors duration-300 group-hover:animate-cyber-typing flex-shrink-0`}
                   />
                   <span className="group-hover:cyber-text-glow transition-all duration-300">@aordeminvictus</span>
                 </a>
@@ -284,7 +284,7 @@ export default function Aprovado() {
               <Target
                 className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500 mx-auto mb-3 cyber-text-glow animate-cyber-glow-pulse hover:animate-cyber-typing cursor-default`}
               />
-              <p className={`${isMobile ? "text-xs" : "text-sm"} text-cyber-gray-300 font-modern leading-relaxed`}>
+              <p className={`${isMobile ? "text-xs leading-relaxed" : "text-sm"} text-cyber-gray-300 font-modern`}>
                 Aguarde nosso contato. A análise das respostas pode levar até 24 horas.
               </p>
             </div>

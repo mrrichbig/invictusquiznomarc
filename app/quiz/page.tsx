@@ -161,19 +161,19 @@ export default function InvictusQuiz() {
               {/* Enhanced Personal Data Section */}
               <div className={`space-y-${isMobile ? "6" : "8"}`}>
                 <h2
-                  className={`${isMobile ? "text-xl" : "text-2xl"} font-modern font-bold text-cyber-gray-100 border-b border-cyber pb-4 flex items-center gap-3 animate-cyber-slide-in delay-cyber-100`}
+                  className={`${isMobile ? "text-lg" : "text-2xl"} font-modern font-bold text-cyber-gray-100 border-b border-cyber pb-4 flex items-center gap-3 animate-cyber-slide-in delay-cyber-100`}
                 >
                   <Zap
-                    className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500 cyber-text-glow animate-cyber-glow-pulse`}
+                    className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500 cyber-text-glow animate-cyber-glow-pulse flex-shrink-0`}
                   />
-                  Seus Dados Pessoais
+                  <span className={`${isMobile ? "text-base" : ""}`}>Seus Dados Pessoais</span>
                 </h2>
 
                 <div className={`grid ${isMobile ? "grid-cols-1 gap-6" : "md:grid-cols-2 gap-8"}`}>
                   <div className="space-y-3 animate-cyber-fade-up delay-cyber-200">
                     <Label
                       htmlFor="nome"
-                      className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-cyber-gray-200`}
+                      className={`${isMobile ? "text-sm" : "text-lg"} font-modern font-semibold text-cyber-gray-200`}
                     >
                       Nome Completo *
                     </Label>
@@ -183,7 +183,7 @@ export default function InvictusQuiz() {
                       required
                       value={formData.nome}
                       onChange={(e) => setFormData((prev) => ({ ...prev, nome: e.target.value }))}
-                      className={`${isMobile ? "h-12 text-base" : "h-14 text-lg"} border-cyber focus:border-cyber-light bg-cyber-card text-cyber-gray-100 placeholder:text-cyber-gray-500 transition-all duration-300 font-modern rounded-lg backdrop-blur-sm focus:cyber-glow hover-cyber-border focus-cyber`}
+                      className={`${isMobile ? "h-12 text-sm" : "h-14 text-lg"} border-cyber focus:border-cyber-light bg-cyber-card text-cyber-gray-100 placeholder:text-cyber-gray-500 transition-all duration-300 font-modern rounded-lg backdrop-blur-sm focus:cyber-glow hover-cyber-border focus-cyber`}
                       placeholder="Digite seu nome completo"
                     />
                   </div>
@@ -191,7 +191,7 @@ export default function InvictusQuiz() {
                   <div className="space-y-3 animate-cyber-fade-up delay-cyber-300">
                     <Label
                       htmlFor="email"
-                      className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-cyber-gray-200`}
+                      className={`${isMobile ? "text-sm" : "text-lg"} font-modern font-semibold text-cyber-gray-200`}
                     >
                       E-mail *
                     </Label>
@@ -201,7 +201,7 @@ export default function InvictusQuiz() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                      className={`${isMobile ? "h-12 text-base" : "h-14 text-lg"} border-cyber focus:border-cyber-light bg-cyber-card text-cyber-gray-100 placeholder:text-cyber-gray-500 transition-all duration-300 font-modern rounded-lg backdrop-blur-sm focus:cyber-glow hover-cyber-border focus-cyber`}
+                      className={`${isMobile ? "h-12 text-sm" : "h-14 text-lg"} border-cyber focus:border-cyber-light bg-cyber-card text-cyber-gray-100 placeholder:text-cyber-gray-500 transition-all duration-300 font-modern rounded-lg backdrop-blur-sm focus:cyber-glow hover-cyber-border focus-cyber`}
                       placeholder="seu@email.com"
                     />
                   </div>
@@ -210,7 +210,7 @@ export default function InvictusQuiz() {
                 <div className="space-y-3 animate-cyber-fade-up delay-cyber-400">
                   <Label
                     htmlFor="whatsapp"
-                    className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-cyber-gray-200`}
+                    className={`${isMobile ? "text-sm" : "text-lg"} font-modern font-semibold text-cyber-gray-200`}
                   >
                     WhatsApp com DDD *
                   </Label>
@@ -220,7 +220,7 @@ export default function InvictusQuiz() {
                     required
                     value={formData.whatsapp}
                     onChange={(e) => setFormData((prev) => ({ ...prev, whatsapp: e.target.value }))}
-                    className={`${isMobile ? "h-12 text-base w-full" : "h-14 text-lg max-w-md"} border-cyber focus:border-cyber-light bg-cyber-card text-cyber-gray-100 placeholder:text-cyber-gray-500 transition-all duration-300 font-modern rounded-lg backdrop-blur-sm focus:cyber-glow hover-cyber-border focus-cyber`}
+                    className={`${isMobile ? "h-12 text-sm w-full" : "h-14 text-lg max-w-md"} border-cyber focus:border-cyber-light bg-cyber-card text-cyber-gray-100 placeholder:text-cyber-gray-500 transition-all duration-300 font-modern rounded-lg backdrop-blur-sm focus:cyber-glow hover-cyber-border focus-cyber`}
                     placeholder="(11) 99999-9999"
                   />
                 </div>
@@ -229,18 +229,18 @@ export default function InvictusQuiz() {
               {/* Enhanced Questions Section */}
               <div className={`space-y-${isMobile ? "8" : "10"}`}>
                 <h2
-                  className={`${isMobile ? "text-xl" : "text-2xl"} font-modern font-bold text-cyber-gray-100 border-b border-cyber pb-4 flex items-center gap-3 animate-cyber-slide-in delay-cyber-500`}
+                  className={`${isMobile ? "text-lg" : "text-2xl"} font-modern font-bold text-cyber-gray-100 border-b border-cyber pb-4 flex items-center gap-3 animate-cyber-slide-in delay-cyber-500`}
                 >
                   <Crown
-                    className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500 cyber-text-glow animate-cyber-glow-pulse`}
+                    className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500 cyber-text-glow animate-cyber-glow-pulse flex-shrink-0`}
                   />
-                  Avaliação Exclusiva
+                  <span className={`${isMobile ? "text-base" : ""}`}>Avaliação Exclusiva</span>
                 </h2>
 
                 {/* Enhanced Question 1 */}
                 <div className="space-y-4 animate-cyber-fade-up delay-cyber-600">
                   <Label
-                    className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-semibold text-cyber-gray-100`}
+                    className={`${isMobile ? "text-base" : "text-xl"} font-modern font-semibold text-cyber-gray-100`}
                   >
                     1. Qual sua experiência com Marketing Digital?
                   </Label>
@@ -263,11 +263,11 @@ export default function InvictusQuiz() {
                         <RadioGroupItem
                           value={option}
                           id={option}
-                          className="border-cyber text-cyber-red w-5 h-5 hover:animate-cyber-typing"
+                          className="border-cyber text-cyber-red w-5 h-5 hover:animate-cyber-typing flex-shrink-0"
                         />
                         <Label
                           htmlFor={option}
-                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-cyber-gray-200 hover:text-cyber-gray-100 transition-colors duration-300 font-modern leading-relaxed`}
+                          className={`${isMobile ? "text-sm leading-relaxed" : "text-base"} cursor-pointer flex-1 text-cyber-gray-200 hover:text-cyber-gray-100 transition-colors duration-300 font-modern`}
                         >
                           {option}
                         </Label>
@@ -279,7 +279,7 @@ export default function InvictusQuiz() {
                 {/* Enhanced Question 2 */}
                 <div className="space-y-4 animate-cyber-fade-up delay-cyber-700">
                   <Label
-                    className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-semibold text-cyber-gray-100`}
+                    className={`${isMobile ? "text-base" : "text-xl"} font-modern font-semibold text-cyber-gray-100`}
                   >
                     2. Você já tentou vender algum produto online?
                   </Label>
@@ -301,11 +301,11 @@ export default function InvictusQuiz() {
                         <RadioGroupItem
                           value={option}
                           id={option}
-                          className="border-cyber text-cyber-red w-5 h-5 hover:animate-cyber-typing"
+                          className="border-cyber text-cyber-red w-5 h-5 hover:animate-cyber-typing flex-shrink-0"
                         />
                         <Label
                           htmlFor={option}
-                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-cyber-gray-200 hover:text-cyber-gray-100 transition-colors duration-300 font-modern leading-relaxed`}
+                          className={`${isMobile ? "text-sm leading-relaxed" : "text-base"} cursor-pointer flex-1 text-cyber-gray-200 hover:text-cyber-gray-100 transition-colors duration-300 font-modern`}
                         >
                           {option}
                         </Label>
@@ -317,7 +317,7 @@ export default function InvictusQuiz() {
                 {/* Enhanced Question 3 */}
                 <div className="space-y-4 animate-cyber-fade-up delay-cyber-800">
                   <Label
-                    className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-semibold text-cyber-gray-100`}
+                    className={`${isMobile ? "text-base" : "text-xl"} font-modern font-semibold text-cyber-gray-100`}
                   >
                     3. Com quais áreas do digital você já teve contato? (Múltipla escolha)
                   </Label>
@@ -339,11 +339,11 @@ export default function InvictusQuiz() {
                           id={area}
                           checked={formData.areasContato.includes(area)}
                           onCheckedChange={(checked) => handleAreasChange(area, checked as boolean)}
-                          className="border-cyber data-[state=checked]:bg-cyber-red data-[state=checked]:border-cyber-red transition-all duration-300 w-5 h-5 hover:animate-cyber-typing"
+                          className="border-cyber data-[state=checked]:bg-cyber-red data-[state=checked]:border-cyber-red transition-all duration-300 w-5 h-5 hover:animate-cyber-typing flex-shrink-0"
                         />
                         <Label
                           htmlFor={area}
-                          className={`${isMobile ? "text-sm" : "text-base"} cursor-pointer flex-1 text-cyber-gray-200 hover:text-cyber-gray-100 transition-colors duration-300 font-modern leading-relaxed`}
+                          className={`${isMobile ? "text-sm leading-relaxed" : "text-base"} cursor-pointer flex-1 text-cyber-gray-200 hover:text-cyber-gray-100 transition-colors duration-300 font-modern`}
                         >
                           {area}
                         </Label>
@@ -356,7 +356,7 @@ export default function InvictusQuiz() {
                 <div className="space-y-4 animate-cyber-fade-up delay-cyber-700">
                   <Label
                     htmlFor="impedimento"
-                    className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-semibold text-cyber-gray-100`}
+                    className={`${isMobile ? "text-base" : "text-xl"} font-modern font-semibold text-cyber-gray-100`}
                   >
                     4. O que está te impedindo de vencer hoje?
                   </Label>
@@ -364,7 +364,7 @@ export default function InvictusQuiz() {
                     id="impedimento"
                     value={formData.impedimento}
                     onChange={(e) => setFormData((prev) => ({ ...prev, impedimento: e.target.value }))}
-                    className={`${isMobile ? "min-h-[120px] text-base" : "min-h-[140px] text-lg"} border-cyber focus:border-cyber-light bg-cyber-card text-cyber-gray-100 placeholder:text-cyber-gray-500 transition-all duration-300 font-modern rounded-lg leading-relaxed backdrop-blur-sm focus:cyber-glow hover-cyber-border focus-cyber`}
+                    className={`${isMobile ? "min-h-[120px] text-sm" : "min-h-[140px] text-lg"} border-cyber focus:border-cyber-light bg-cyber-card text-cyber-gray-100 placeholder:text-cyber-gray-500 transition-all duration-300 font-modern rounded-lg leading-relaxed backdrop-blur-sm focus:cyber-glow hover-cyber-border focus-cyber`}
                     placeholder="Descreva os principais obstáculos que você enfrenta..."
                   />
                 </div>
@@ -380,13 +380,13 @@ export default function InvictusQuiz() {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                   <div className="flex items-center justify-center w-full relative z-10">
                     <Crown
-                      className={`${isMobile ? "mr-2 h-4 w-4 flex-shrink-0" : "mr-4 h-5 w-5"} text-red-500 transition-all duration-300 group-hover:animate-cyber-typing`}
+                      className={`${isMobile ? "mr-2 h-5 w-5 flex-shrink-0" : "mr-4 h-5 w-5"} text-red-500 transition-all duration-300 group-hover:animate-cyber-typing`}
                     />
                     <span className={`tracking-wide text-center ${isMobile ? "text-sm leading-tight" : "text-lg"}`}>
                       {isMobile ? "SOLICITAR ACESSO À COMUNIDADE" : "SOLICITAR ACESSO À COMUNIDADE INVICTUS"}
                     </span>
                     <Crown
-                      className={`${isMobile ? "ml-2 h-4 w-4 flex-shrink-0" : "ml-4 h-5 w-5"} text-red-500 transition-all duration-300 group-hover:animate-cyber-typing`}
+                      className={`${isMobile ? "ml-2 h-5 w-5 flex-shrink-0" : "ml-4 h-5 w-5"} text-red-500 transition-all duration-300 group-hover:animate-cyber-typing`}
                     />
                   </div>
                 </Button>

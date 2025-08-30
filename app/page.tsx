@@ -177,13 +177,13 @@ export default function LandingPage() {
             isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-20 scale-95"
           }`}
         >
-          {/* Enhanced Logo with micro-interactions */}
+          {/* Enhanced Logo - removed hover effects */}
           <div className={`${isMobile ? "mb-8" : "mb-12"} relative animate-cyber-scale-in`}>
-            <div className="relative inline-block group">
+            <div className="relative inline-block">
               <img
                 src="/logo.png"
                 alt="Logo Invictus"
-                className={`${isMobile ? "h-20 w-20" : "h-40 w-40"} mx-auto transition-all duration-500 ${!isMobile ? "group-hover:scale-110 hover-cyber-lift" : ""} drop-shadow-2xl relative z-10 hover-cyber-glow`}
+                className={`${isMobile ? "h-20 w-20" : "h-40 w-40"} mx-auto transition-all duration-500 drop-shadow-2xl relative z-10`}
               />
             </div>
           </div>
@@ -204,12 +204,12 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Enhanced Subtitle with staggered animation */}
+          {/* Enhanced Subtitle with staggered animation and optimized mobile text */}
           <div
             className={`${isMobile ? "mb-10" : "mb-16"} max-w-4xl mx-auto transition-all duration-2000 delay-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <p
-              className={`${isMobile ? "text-base px-2" : "text-xl md:text-2xl"} font-modern text-cyber-gray-200 leading-relaxed mb-6 animate-cyber-slide-in delay-cyber-300`}
+              className={`${isMobile ? "text-base px-4 leading-relaxed" : "text-xl md:text-2xl leading-relaxed"} font-modern text-cyber-gray-200 mb-6 animate-cyber-slide-in delay-cyber-300`}
             >
               Entra quem está pronto. Conteúdo de{" "}
               <span className="text-cyber-red font-semibold cyber-text-glow hover-cyber-glow transition-all duration-300 cursor-default">
@@ -218,7 +218,7 @@ export default function LandingPage() {
               que não existe em nenhum lugar da internet.
             </p>
             <p
-              className={`${isMobile ? "text-base px-2" : "text-xl md:text-2xl"} font-modern text-cyber-gray-300 leading-relaxed animate-cyber-slide-in delay-cyber-400`}
+              className={`${isMobile ? "text-base px-4 leading-relaxed" : "text-xl md:text-2xl leading-relaxed"} font-modern text-cyber-gray-300 animate-cyber-slide-in delay-cyber-400`}
             >
               Se você passar… um{" "}
               <span className="text-cyber-red font-semibold cyber-text-glow hover-cyber-glow transition-all duration-300 cursor-default">
@@ -228,33 +228,35 @@ export default function LandingPage() {
             </p>
           </div>
 
-          {/* Enhanced CTA Section with ready animation */}
+          {/* Enhanced CTA Section with uniform icon sizes */}
           <div
             className={`space-y-8 transition-all duration-2000 delay-1500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <div className="relative animate-cyber-scale-in delay-cyber-500">
               <Button
                 onClick={handleStartQuiz}
-                className={`group relative ${isMobile ? "h-14 px-8 text-base w-full max-w-sm mx-auto" : "h-20 px-16 text-xl"} font-modern font-bold bg-gradient-to-r from-cyber-red to-cyber-red-dark hover:from-cyber-red-light hover:to-cyber-red text-white shadow-2xl transform ${!isMobile ? "hover:scale-105 hover-cyber-lift" : ""} transition-all duration-500 cyber-border-glow overflow-hidden rounded-lg animate-cyber-button-ready hover-cyber-glow active:animate-cyber-click`}
+                className={`group relative ${isMobile ? "h-14 px-6 text-sm w-full max-w-sm mx-auto" : "h-20 px-16 text-xl"} font-modern font-bold bg-gradient-to-r from-cyber-red to-cyber-red-dark hover:from-cyber-red-light hover:to-cyber-red text-white shadow-2xl transform ${!isMobile ? "hover:scale-105 hover-cyber-lift" : ""} transition-all duration-500 cyber-border-glow overflow-hidden rounded-lg animate-cyber-button-ready hover-cyber-glow active:animate-cyber-click`}
               >
                 <div className="absolute inset-0 bg-cyber-red/20 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-500 animate-cyber-glow-pulse"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 <div className="flex items-center justify-center relative z-10">
                   <Zap
-                    className={`${isMobile ? "mr-2 h-4 w-4" : "mr-4 h-6 w-6"} text-red-500 transition-all duration-300 group-hover:animate-cyber-typing`}
+                    className={`${isMobile ? "mr-2 h-5 w-5" : "mr-4 h-6 w-6"} text-red-500 transition-all duration-300 group-hover:animate-cyber-typing flex-shrink-0`}
                   />
-                  <span className="tracking-wide">INICIAR O TESTE INVICTUS</span>
+                  <span className={`tracking-wide ${isMobile ? "text-center leading-tight" : ""}`}>
+                    {isMobile ? "INICIAR TESTE INVICTUS" : "INICIAR O TESTE INVICTUS"}
+                  </span>
                   <Crown
-                    className={`${isMobile ? "ml-2 h-4 w-4" : "ml-4 h-6 w-6"} text-red-500 transition-all duration-300 group-hover:animate-cyber-typing`}
+                    className={`${isMobile ? "ml-2 h-5 w-5" : "ml-4 h-6 w-6"} text-red-500 transition-all duration-300 group-hover:animate-cyber-typing flex-shrink-0`}
                   />
                 </div>
               </Button>
             </div>
           </div>
 
-          {/* Enhanced Stats with staggered entrance */}
+          {/* Enhanced Stats with uniform sizing and better mobile optimization */}
           <div
-            className={`${isMobile ? "mt-12" : "mt-20"} grid grid-cols-3 ${isMobile ? "gap-6 max-w-xs" : "gap-12 max-w-lg"} mx-auto transition-all duration-2000 delay-2000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+            className={`${isMobile ? "mt-12" : "mt-20"} grid grid-cols-3 ${isMobile ? "gap-4 max-w-sm" : "gap-12 max-w-lg"} mx-auto transition-all duration-2000 delay-2000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             {[
               { value: "97%", label: "Reprovados", color: "text-red-500", delay: "delay-cyber-600" },
@@ -266,12 +268,12 @@ export default function LandingPage() {
                 className={`text-center group transition-all duration-1000 animate-cyber-fade-up ${stat.delay} hover-cyber-lift cursor-default`}
               >
                 <div
-                  className={`${isMobile ? "text-xl" : "text-3xl"} font-modern font-bold ${stat.color} group-hover:scale-110 transition-all duration-300 cyber-text-glow group-hover:animate-cyber-typing`}
+                  className={`${isMobile ? "text-2xl" : "text-3xl"} font-modern font-bold ${stat.color} group-hover:scale-110 transition-all duration-300 cyber-text-glow group-hover:animate-cyber-typing`}
                 >
                   {stat.value}
                 </div>
                 <div
-                  className={`${isMobile ? "text-xs" : "text-sm"} font-modern text-cyber-gray-400 group-hover:text-cyber-gray-300 transition-colors duration-300 mt-2`}
+                  className={`${isMobile ? "text-xs mt-1" : "text-sm mt-2"} font-modern text-cyber-gray-400 group-hover:text-cyber-gray-300 transition-colors duration-300`}
                 >
                   {stat.label}
                 </div>
