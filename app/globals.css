@@ -438,15 +438,6 @@ select {
   .delay-cyber-800 {
     animation-delay: 800ms;
   }
-
-  /* Social Proof Carousel Animations */
-  .animate-scroll-right {
-    animation: scroll-right 40s linear infinite;
-  }
-
-  .animate-scroll-left {
-    animation: scroll-left 40s linear infinite;
-  }
 }
 
 /* Elegant text shimmer effect */
@@ -1206,31 +1197,11 @@ select {
   }
 }
 
-@keyframes scroll-right {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   .animate-float-mobile,
   .animate-pulse-mobile,
-  .animate-glow-mobile,
-  .animate-scroll-right,
-  .animate-scroll-left {
+  .animate-glow-mobile {
     animation: none;
   }
 }
@@ -1260,14 +1231,5 @@ select {
 
   .mobile-title-responsive {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
-  }
-
-  /* Otimizando animações do carrossel para mobile */
-  .animate-scroll-right {
-    animation: scroll-right 35s linear infinite;
-  }
-
-  .animate-scroll-left {
-    animation: scroll-left 35s linear infinite;
   }
 }
