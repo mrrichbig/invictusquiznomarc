@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle, Star, Target, Sparkles } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { CheckCircle, Star, Target, Instagram } from "lucide-react"
 
 export default function Aprovado() {
   const [isVisible, setIsVisible] = useState(false)
@@ -60,182 +61,136 @@ export default function Aprovado() {
 
   return (
     <div
-      className={`min-h-screen ${isMobile ? "mobile-bg-simple" : "bg-gradient-to-br from-black via-red-950 to-black"} ${isMobile ? "flex flex-col justify-start items-center py-4" : "flex items-center justify-center"} p-4 relative overflow-hidden ${isMobile ? "pt-4" : "pt-8"}`}
+      className={`min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 ${isMobile ? "flex flex-col justify-start items-center py-4" : "flex items-center justify-center"} p-4 relative overflow-hidden ${isMobile ? "pt-4" : "pt-8"}`}
     >
-      {/* Enhanced Background Effects */}
+      {/* Clean Cyber Background Effects */}
       <div className="absolute inset-0">
-        {/* Floating particles with varied sizes */}
-        {[...Array(isMobile ? 12 : 30)].map((_, i) => (
+        {/* Minimal floating particles */}
+        {[...Array(isMobile ? 8 : 20)].map((_, i) => (
           <div
             key={i}
-            className={`absolute rounded-full animate-float-mobile ${
-              i % 3 === 0
-                ? "w-2 h-2 bg-red-500/60"
-                : i % 3 === 1
-                  ? "w-1 h-1 bg-red-400/40"
-                  : "w-1.5 h-1.5 bg-red-300/50"
-            } ${isMobile && i > 8 ? "mobile-particles" : ""}`}
+            className={`absolute rounded-full ${
+              i % 2 === 0 ? "w-1 h-1 bg-red-500/40" : "w-0.5 h-0.5 bg-red-400/30"
+            } animate-float-mobile`}
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 4}s`,
-              animationDuration: `${3 + Math.random() * 3}s`,
+              animationDuration: `${4 + Math.random() * 2}s`,
             }}
           />
         ))}
 
-        {/* Elegant floating geometric shapes */}
+        {/* Clean geometric grid */}
         {!isMobile && (
-          <div className="absolute inset-0 pointer-events-none">
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={`shape-${i}`}
-                className={`absolute border border-red-500/20 animate-float-rotate ${
-                  i % 2 === 0 ? "w-8 h-8 rotate-45" : "w-6 h-6 rotate-12"
-                }`}
-                style={{
-                  left: `${10 + i * 15}%`,
-                  top: `${15 + (i % 3) * 25}%`,
-                  animationDelay: `${i * 0.8}s`,
-                  animationDuration: `${6 + Math.random() * 4}s`,
-                }}
-              />
-            ))}
-          </div>
-        )}
-
-        {/* Success Binary - Clean version */}
-        {!isMobile && (
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 text-red-500/15 text-xs font-mono animate-binary-flow">
-              SUCCESS_APPROVED_INVICTUS
-            </div>
+          <div className="absolute inset-0 pointer-events-none opacity-10">
             <div
-              className="absolute bottom-1/3 right-1/4 text-red-400/15 text-xs font-mono animate-binary-flow"
-              style={{ animationDelay: "2s" }}
-            >
-              ELITE_ACCESS_GRANTED
-            </div>
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `
+                linear-gradient(rgba(239, 68, 68, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(239, 68, 68, 0.1) 1px, transparent 1px)
+              `,
+                backgroundSize: "50px 50px",
+              }}
+            ></div>
           </div>
         )}
 
-        {/* Elegant glowing orbs */}
+        {/* Subtle cyber elements */}
         {!isMobile && (
-          <>
-            <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-red-500/10 rounded-full blur-3xl animate-pulse-mobile"></div>
-            <div className="absolute bottom-1/3 right-1/4 w-32 h-32 bg-red-500/10 rounded-full blur-2xl animate-pulse-mobile delay-mobile-500"></div>
-            <div className="absolute top-1/2 right-1/4 w-24 h-24 bg-red-600/15 rounded-full blur-xl animate-pulse-mobile delay-1000"></div>
-          </>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 text-red-500/20 text-xs font-mono">[SUCCESS]</div>
+            <div className="absolute bottom-1/3 right-1/4 text-red-400/20 text-xs font-mono">[APPROVED]</div>
+          </div>
         )}
       </div>
 
       <Card
-        className={`${isMobile ? "max-w-md w-full mt-4" : "max-w-3xl"} w-full border-2 border-red-500/60 shadow-2xl bg-black/70 backdrop-blur-md transition-all duration-1500 relative overflow-hidden ${
+        className={`${isMobile ? "max-w-md w-full mt-4" : "max-w-2xl"} w-full border border-gray-700/50 shadow-2xl bg-gray-900/80 backdrop-blur-xl transition-all duration-1500 relative overflow-hidden ${
           isVisible ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-10"
         }`}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-red-500/15 via-red-600/5 to-transparent"></div>
-        <div className="absolute -inset-1 bg-gradient-to-r from-red-500/40 via-red-400/40 to-red-600/40 rounded-lg blur-sm animate-pulse-mobile"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent"></div>
 
-        <CardContent className={`${isMobile ? "p-8" : "p-12 md:p-16"} text-center relative z-10`}>
-          {/* Enhanced Success Icon */}
-          <div className={`${isMobile ? "mb-8" : "mb-12"}`}>
-            <div className="relative inline-block group">
-              <div className="absolute -inset-12 bg-gradient-to-r from-red-500/30 via-red-600/20 to-red-500/30 rounded-full blur-3xl animate-pulse-mobile"></div>
-              <div className="absolute -inset-8 bg-gradient-to-r from-red-400/40 to-red-600/40 rounded-full blur-2xl animate-pulse-mobile delay-500"></div>
+        <CardContent className={`${isMobile ? "p-8" : "p-12"} text-center relative z-10`}>
+          {/* Clean Success Icon */}
+          <div className={`${isMobile ? "mb-8" : "mb-10"}`}>
+            <div className="relative inline-block">
               <CheckCircle
-                className={`${isMobile ? "h-20 w-20" : "h-28 w-28"} text-green-500 mx-auto animate-success-mobile drop-shadow-2xl relative z-10 group-hover:scale-110 transition-transform duration-500`}
-              />
-              <Sparkles
-                className={`absolute -top-2 -right-2 ${isMobile ? "h-6 w-6" : "h-8 w-8"} text-yellow-400 animate-star-twinkle`}
+                className={`${isMobile ? "h-16 w-16" : "h-20 w-20"} text-green-500 mx-auto drop-shadow-lg transition-transform duration-500 hover:scale-110`}
               />
             </div>
           </div>
 
-          {/* Enhanced Title */}
+          {/* Clean Title */}
           <h1
-            className={`${isMobile ? "text-3xl" : "text-4xl md:text-5xl"} font-modern font-bold text-white mb-8 transition-all duration-1000 delay-mobile-300 ${
+            className={`${isMobile ? "text-2xl" : "text-3xl"} font-modern font-bold text-white mb-8 transition-all duration-1000 delay-300 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            } text-elegant-shadow`}
+            }`}
           >
             PARABÉNS, INVICTO!
           </h1>
 
-          {/* Enhanced Code Reveal with Typewriter */}
+          {/* Clean Code Display */}
           <div
-            className={`${isMobile ? "mb-8" : "mb-12"} transition-all duration-1500 delay-mobile-400 ${
+            className={`${isMobile ? "mb-8" : "mb-10"} transition-all duration-1500 delay-400 ${
               showCode ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           >
             <div
-              className={`bg-gradient-to-r from-red-500/20 via-red-600/10 to-red-700/20 rounded-xl ${isMobile ? "p-6" : "p-8"} border border-red-500/50 relative overflow-hidden backdrop-blur-sm group hover:border-red-400/70 transition-all duration-500`}
+              className={`bg-gray-800/60 rounded-lg ${isMobile ? "p-6" : "p-8"} border border-gray-600/50 relative overflow-hidden backdrop-blur-sm hover:border-gray-500/70 transition-all duration-500`}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/10 to-transparent animate-shimmer"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
               <h3
-                className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-bold text-white mb-3 relative z-10 flex items-center justify-center gap-2`}
+                className={`${isMobile ? "text-base" : "text-lg"} font-modern font-semibold text-gray-300 mb-3 flex items-center justify-center gap-2`}
               >
-                <Target className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500 animate-pulse-mobile`} />
+                <Target className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500`} />
                 SEU CÓDIGO INVICTO
               </h3>
 
-              <div
-                className={`${isMobile ? "text-2xl" : "text-3xl"} font-mono font-bold text-red-400 tracking-wider relative z-10 text-hacker-glow group-hover:text-red-300 transition-colors duration-500`}
-              >
+              <div className={`${isMobile ? "text-xl" : "text-2xl"} font-mono font-bold text-red-400 tracking-wider`}>
                 {showTypewriter ? typewriterCode : codigoInvicto}
                 {showTypewriter && typewriterCode.length < codigoInvicto.length && (
                   <span className="animate-blink-mobile">|</span>
                 )}
               </div>
 
-              <p
-                className={`${isMobile ? "text-sm" : "text-base"} text-gray-400 mt-3 relative z-10 font-modern group-hover:text-gray-300 transition-colors duration-500`}
-              >
+              <p className={`${isMobile ? "text-xs" : "text-sm"} text-gray-500 mt-3 font-modern`}>
                 Guarde este código, ele é único e individual
               </p>
             </div>
           </div>
 
-          {/* Enhanced Message */}
+          {/* Clean Message */}
           <div
-            className={`space-y-6 ${isMobile ? "mb-8" : "mb-12"} transition-all duration-1000 delay-mobile-500 ${
+            className={`space-y-4 ${isMobile ? "mb-8" : "mb-10"} transition-all duration-1000 delay-500 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
-            <p className={`${isMobile ? "text-lg" : "text-xl"} font-modern text-gray-200 leading-relaxed`}>
+            <p className={`${isMobile ? "text-base" : "text-lg"} font-modern text-gray-300 leading-relaxed`}>
               Suas respostas foram registradas e serão analisadas pela{" "}
-              <span className="text-red-400 font-bold animate-pulse-mobile bg-gradient-to-r from-red-400 to-red-500 bg-clip-text text-transparent">
-                Equipe Invictus
-              </span>
-              .
+              <span className="text-red-400 font-semibold">Equipe Invictus</span>.
             </p>
 
-            <p className={`${isMobile ? "text-base" : "text-lg"} font-modern text-gray-300 leading-relaxed`}>
-              Em breve entraremos em contato através do seu{" "}
-              <span className="text-white font-semibold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent">
-                email
-              </span>{" "}
+            <p className={`${isMobile ? "text-sm" : "text-base"} font-modern text-gray-400 leading-relaxed`}>
+              Em breve entraremos em contato através do seu <span className="text-white font-semibold">email</span>{" "}
               informando se você foi aprovado ou não.
             </p>
           </div>
 
-          {/* Enhanced Benefits */}
+          {/* Clean Benefits */}
           <div
-            className={`bg-gradient-to-br from-red-950/30 via-red-900/10 to-red-950/30 rounded-xl ${isMobile ? "p-6 mb-8" : "p-8 mb-12"} border border-red-500/30 relative overflow-hidden transition-all duration-1500 delay-mobile-500 backdrop-blur-sm hover:border-red-400/50 group ${
+            className={`bg-gray-800/40 rounded-lg ${isMobile ? "p-6 mb-8" : "p-8 mb-10"} border border-gray-600/30 relative overflow-hidden transition-all duration-1500 delay-500 backdrop-blur-sm hover:border-gray-500/50 group ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 via-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
             <h3
-              className={`${isMobile ? "text-xl" : "text-2xl"} font-modern font-bold text-white mb-6 flex items-center justify-center gap-3 relative z-10`}
+              className={`${isMobile ? "text-lg" : "text-xl"} font-modern font-semibold text-white mb-6 flex items-center justify-center gap-2`}
             >
-              <Star className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500 animate-pulse-mobile`} />O que você
-              pode receber:
+              <Star className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-red-500`} />O que você pode receber:
             </h3>
 
-            <ul className={`text-left space-y-4 text-gray-200 relative z-10 ${isMobile ? "text-base" : "text-lg"}`}>
+            <ul className={`text-left space-y-3 text-gray-300 ${isMobile ? "text-sm" : "text-base"}`}>
               {[
                 "Acesso restrito à Comunidade Invictus",
                 "Estratégias de domínio em Marketing Digital",
@@ -244,57 +199,69 @@ export default function Aprovado() {
               ].map((benefit, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-4 group/item animate-fade-in-mobile font-modern leading-relaxed hover:bg-red-500/10 rounded-lg p-2 transition-all duration-300 cursor-default"
-                  style={{ animationDelay: `${600 + index * 100}ms` }}
+                  className="flex items-center gap-3 font-modern leading-relaxed hover:text-white transition-colors duration-300 cursor-default"
                 >
-                  <CheckCircle
-                    className={`${isMobile ? "h-4 w-4" : "h-5 w-5"} text-green-500 flex-shrink-0 animate-pulse-mobile group-hover/item:scale-110 transition-transform duration-300`}
-                  />
-                  <span className="group-hover/item:text-white group-hover/item:translate-x-1 transition-all duration-300">
-                    {benefit}
-                  </span>
+                  <CheckCircle className={`${isMobile ? "h-3 w-3" : "h-4 w-4"} text-green-500 flex-shrink-0`} />
+                  <span>{benefit}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Enhanced Next Steps */}
+          {/* Instagram Section */}
           <div
-            className={`space-y-8 transition-all duration-1500 delay-mobile-500 ${
+            className={`space-y-4 ${isMobile ? "mb-8" : "mb-10"} transition-all duration-1500 delay-600 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            }`}
+          >
+            <p className={`${isMobile ? "text-sm" : "text-base"} text-gray-400 font-modern`}>
+              Enquanto você espera, aproveita pra dar uma olhada no nosso Insta:
+            </p>
+
+            <Button
+              asChild
+              variant="outline"
+              className={`${isMobile ? "h-12 px-6" : "h-14 px-8"} bg-gray-800/60 border-gray-600/50 text-gray-300 hover:bg-gray-700/60 hover:border-gray-500/70 hover:text-white transition-all duration-300 font-modern rounded-lg backdrop-blur-sm`}
+            >
+              <a
+                href="https://www.instagram.com/aordeminvictus/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Instagram className={`${isMobile ? "h-4 w-4" : "h-5 w-5"}`} />
+                @aordeminvictus
+              </a>
+            </Button>
+          </div>
+
+          {/* Clean Next Steps */}
+          <div
+            className={`transition-all duration-1500 delay-700 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
             <div
-              className={`bg-gradient-to-r from-red-500/15 via-red-600/5 to-red-700/15 rounded-xl ${isMobile ? "p-5" : "p-6"} border border-red-500/40 relative overflow-hidden backdrop-blur-sm group hover:border-red-400/60 transition-all duration-500`}
+              className={`bg-gray-800/40 rounded-lg ${isMobile ? "p-5" : "p-6"} border border-gray-600/30 relative overflow-hidden backdrop-blur-sm hover:border-gray-500/50 transition-all duration-500`}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/5 to-transparent animate-shimmer"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              <Target
-                className={`${isMobile ? "h-6 w-6" : "h-7 w-7"} text-red-500 mx-auto mb-3 animate-pulse-mobile relative z-10 group-hover:scale-110 transition-transform duration-300`}
-              />
-              <p
-                className={`${isMobile ? "text-sm" : "text-base"} text-gray-300 relative z-10 font-modern leading-relaxed group-hover:text-white transition-colors duration-300`}
-              >
+              <Target className={`${isMobile ? "h-5 w-5" : "h-6 w-6"} text-red-500 mx-auto mb-3`} />
+              <p className={`${isMobile ? "text-xs" : "text-sm"} text-gray-400 font-modern leading-relaxed`}>
                 Aguarde nosso contato. A análise das respostas pode levar até 24 horas.
               </p>
             </div>
           </div>
 
-          {/* Enhanced Achievement Badge */}
+          {/* Clean Achievement Badge */}
           <div
-            className={`mt-8 inline-block transition-all duration-1500 delay-mobile-500 ${
+            className={`mt-8 inline-block transition-all duration-1500 delay-800 ${
               isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
             }`}
           >
             <div
-              className={`bg-gradient-to-r from-red-500/25 via-red-600/10 to-red-700/25 rounded-full ${isMobile ? "px-6 py-3" : "px-8 py-4"} border border-red-500/60 relative overflow-hidden backdrop-blur-sm group hover:border-red-400/80 transition-all duration-500 hover:scale-105`}
+              className={`bg-gray-800/60 rounded-full ${isMobile ? "px-6 py-3" : "px-8 py-4"} border border-gray-600/50 relative overflow-hidden backdrop-blur-sm hover:border-gray-500/70 transition-all duration-500`}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/10 to-transparent animate-shimmer"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
               <span
-                className={`text-red-400 font-modern font-bold ${isMobile ? "text-sm" : "text-base"} relative z-10 animate-glow-mobile tracking-wide group-hover:text-red-300 transition-colors duration-300`}
+                className={`text-red-400 font-modern font-semibold ${isMobile ? "text-xs" : "text-sm"} tracking-wide`}
               >
                 QUIZ CONCLUÍDO - AGUARDANDO ANÁLISE
               </span>

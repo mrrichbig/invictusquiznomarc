@@ -274,6 +274,12 @@ export default function LandingPage() {
               Entra quem está pronto. Conteúdo de <span className="text-red-400 font-bold">acesso restrito</span> que
               não existe em nenhum lugar da internet.
             </p>
+            <p
+              className={`${isMobile ? "text-base px-2" : "text-xl md:text-2xl"} font-modern text-gray-300 leading-relaxed`}
+            >
+              Se você passar… um <span className="text-red-400 font-bold">acesso que não pode ser comprado</span> será
+              revelado.
+            </p>
           </div>
 
           {/* CTA Section */}
