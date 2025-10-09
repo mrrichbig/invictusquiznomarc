@@ -59,23 +59,38 @@ export default function InvictusQuiz() {
     }
 
     try {
-      // Enviar apenas o email para o webhook do Zapier
-      const webhookData = new URLSearchParams()
-      webhookData.append("email", formData.email)
+      // Enviar todos os dados para o webhook do Zapier com a chave
+      const webhookData = {
+        key: "keyinvictusquiz",
+        nome: formData.nome,
+        email: formData.email,
+        whatsapp: formData.whatsapp,
+        experiencia: formData.experiencia,
+        vendaOnline: formData.vendaOnline,
+        areasContato: formData.areasContato.join(", "),
+        impedimento: formData.impedimento,
+      }
 
-      await fetch("https://hooks.zapier.com/hooks/catch/24917145/u53k48f/", {
+      console.log("Enviando dados para webhook:", webhookData)
+
+      const response = await fetch("https://hooks.zapier.com/hooks/catch/24917145/u53k48f/", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
         },
-        body: webhookData.toString(),
+        body: JSON.stringify(webhookData),
       })
 
-      console.log("Email enviado para o webhook:", {
-        email: formData.email,
-      })
+      console.log("Status da resposta:", response.status)
+
+      if (response.ok) {
+        const responseData = await response.text()
+        console.log("Resposta do webhook:", responseData)
+      } else {
+        console.error("Erro ao enviar para webhook:", response.statusText)
+      }
     } catch (error) {
-      console.error("Erro ao enviar email para o webhook:", error)
+      console.error("Erro ao enviar dados para o webhook:", error)
     }
 
     console.log("Dados do formulário:", formData)
