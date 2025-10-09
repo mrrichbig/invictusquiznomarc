@@ -59,11 +59,9 @@ export default function InvictusQuiz() {
     }
 
     try {
-      // Enviar dados para o webhook do Zapier
+      // Enviar apenas o email para o webhook do Zapier
       const webhookData = new URLSearchParams()
       webhookData.append("email", formData.email)
-      webhookData.append("whatsapp", formData.whatsapp)
-      webhookData.append("chave", "invictuskeyquiz")
 
       await fetch("https://hooks.zapier.com/hooks/catch/24917145/u53k48f/", {
         method: "POST",
@@ -73,13 +71,11 @@ export default function InvictusQuiz() {
         body: webhookData.toString(),
       })
 
-      console.log("Dados enviados para o webhook:", {
+      console.log("Email enviado para o webhook:", {
         email: formData.email,
-        whatsapp: formData.whatsapp,
-        chave: "invictuskeyquiz",
       })
     } catch (error) {
-      console.error("Erro ao enviar dados para o webhook:", error)
+      console.error("Erro ao enviar email para o webhook:", error)
     }
 
     console.log("Dados do formulário:", formData)
@@ -404,7 +400,7 @@ export default function InvictusQuiz() {
           <p
             className={`text-cyber-gray-400 ${isMobile ? "text-xs" : "text-sm"} font-modern animate-cyber-fade-up delay-cyber-600`}
           >
-            © 2024 Invictus Quiz. Todos os direitos reservados.
+            © 2025 Invictus Quiz. Todos os direitos reservados.
           </p>
         </div>
       </div>
