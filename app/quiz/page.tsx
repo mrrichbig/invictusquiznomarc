@@ -63,8 +63,9 @@ export default function InvictusQuiz() {
       const webhookData = new URLSearchParams()
       webhookData.append("email", formData.email)
       webhookData.append("whatsapp", formData.whatsapp)
+      webhookData.append("chave", "invictuskeyquiz")
 
-      await fetch("https://hooks.zapier.com/hooks/catch/23595123/ubwvz6w/", {
+      await fetch("https://hooks.zapier.com/hooks/catch/24917145/u53k48f/", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -75,6 +76,7 @@ export default function InvictusQuiz() {
       console.log("Dados enviados para o webhook:", {
         email: formData.email,
         whatsapp: formData.whatsapp,
+        chave: "invictuskeyquiz",
       })
     } catch (error) {
       console.error("Erro ao enviar dados para o webhook:", error)
